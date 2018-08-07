@@ -49,7 +49,9 @@ class ellipticBVP : public Subscriptor
   ConstraintMatrix   constraints;
   ConstraintMatrix   constraintsMassMatrix;
   DoFHandler<dim>    dofHandler;
+  DoFHandler<dim>    dofHandler_moveMesh;
   DoFHandler<dim>    dofHandler_Scalar;
+  DoFHandler<dim>    dofHandler_Scalar_moveMesh;
 
   //methods
   virtual void mesh();
@@ -63,6 +65,7 @@ class ellipticBVP : public Subscriptor
   void initProjection();
   void projection();
   void markBoundaries();
+  void moveMesh();
 
   //virtual methods to be implemented in derived class
   //method to calculate elemental Jacobian and Residual,

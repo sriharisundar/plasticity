@@ -20,6 +20,7 @@ void ellipticBVP<dim>::init(){
 
   //initialize FE objects
   dofHandler.distribute_dofs (FE);
+  dofHandler_moveMesh.distribute_dofs (FE);
   locally_owned_dofs = dofHandler.locally_owned_dofs ();
   DoFTools::extract_locally_relevant_dofs (dofHandler, locally_relevant_dofs);
   pcout << "number of elements: "
@@ -31,6 +32,7 @@ void ellipticBVP<dim>::init(){
 
   //initialize FE objects for scalar field which will be used for post processing
   dofHandler_Scalar.distribute_dofs (FE_Scalar);
+  dofHandler_Scalar_moveMesh.distribute_dofs (FE_Scalar);
   locally_owned_dofs_Scalar = dofHandler_Scalar.locally_owned_dofs ();
   DoFTools::extract_locally_relevant_dofs (dofHandler_Scalar, locally_relevant_dofs_Scalar);
 
@@ -82,7 +84,7 @@ void ellipticBVP<dim>::init(){
       deluConstraint[faceID-1][dof-1]=totalU/totalIncrements;
     }
   }
-  
+
   //apply initial conditions
   applyInitialConditions();
   solutionWithGhosts=solution;

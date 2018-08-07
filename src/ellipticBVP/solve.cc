@@ -76,6 +76,8 @@ void ellipticBVP<dim>::solve(){
       //output results to file
       computing_timer.enter_section("postprocess");
 
+      moveMesh();
+
       if (currentIncrement%userInputs.skipOutputSteps==0)
         if (userInputs.writeOutput) output();
       computing_timer.exit_section("postprocess");

@@ -14,7 +14,9 @@ ellipticBVP<dim>::ellipticBVP (userInputParameters _userInputs):
   FE (FE_Q<dim>(_userInputs.feOrder), dim),
   FE_Scalar (FE_Q<dim>(_userInputs.feOrder), 1),
   dofHandler (triangulation),
+  dofHandler_moveMesh(triangulation),
   dofHandler_Scalar (triangulation),
+  dofHandler_Scalar_moveMesh (triangulation),
   delT(_userInputs.delT),
   totalT(_userInputs.totalTime),
   currentIteration(0),
@@ -34,6 +36,7 @@ ellipticBVP<dim>::ellipticBVP (userInputParameters _userInputs):
   if(userInputs.enableCyclicLoading)
     cycleTime=4*userInputs.quarterCycleTime;
   totalIncrements=totalT/delT;
+
 }
 
 //destructor
