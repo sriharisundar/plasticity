@@ -43,6 +43,28 @@ void crystalPlasticity<dim>::updateAfterIncrement()
 				}
 					//Update strain, stress, and tangent for current time step/quadrature point
 				calculatePlasticity(cellID, q);
+
+				temp.reinit(dim, dim); temp = 0.0;
+				temp2.reinit(dim, dim); temp2 = 0.0;
+				temp3.reinit(dim, dim); temp3 = 0.0;
+				CE_tau = 0.0;
+				temp = F;
+				F.Tmmult(CE_tau, temp);
+				E_tau = CE_tau;
+				temp = IdentityMatrix(dim);
+				for (unsigned int i = 0;i<dim;i++) {
+					for (unsigned int j = 0;j<dim;j++) {
+						E_tau[i][j] = 0.5*(E_tau[i][j] - temp[i][j]);
+						temp2[i][j] = E_tau[i][j]*fe_values.JxW(q);
+	//		Small strain definition of strain//			temp2[i][j] = (0.5*(F[i][j] + F[j][i]) - temp[i][j])*fe_values.JxW(q);
+	//		Cauchy stress definition//			temp3[i][j] = T[i][j] * fe_values.JxW(q);
+						temp3[i][j] = P[i][j] * fe_values.JxW(q);
+					}
+				}
+
+				local_strain.add(1.0, temp2);
+				local_stress.add(1.0, temp3);
+				local_microvol = local_microvol + fe_values.JxW(q);
 			}
 
 			cellID++;
