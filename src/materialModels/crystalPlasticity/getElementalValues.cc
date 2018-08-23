@@ -29,7 +29,6 @@ void crystalPlasticity<dim>::getElementalValues(FEValues<dim>& fe_values,
      }
 
      //local data structures
-     FullMatrix<double> K_local(dofs_per_cell,dofs_per_cell),CE_tau(dim,dim),E_tau(dim,dim),temp,temp2,temp3;
      Vector<double> Rlocal (dofs_per_cell);
      K_local = 0.0; Rlocal = 0.0;
 
@@ -63,37 +62,6 @@ void crystalPlasticity<dim>::getElementalValues(FEValues<dim>& fe_values,
 	 }
 
 	 
-
-         //calculate von-Mises stress and equivalent strain
-         double traceE, traceT,vonmises,eqvstrain;
-         FullMatrix<double> deve(dim,dim),devt(dim,dim);
-
-
-         traceE=E_tau.trace();
-         traceT=T.trace();
-         temp=IdentityMatrix(3);
-         temp.equ(traceE/3,temp);
-
-         deve=E_tau;
-         deve.add(-1.0,temp);
-
-         temp=IdentityMatrix(3);
-         temp.equ(traceT/3,temp);
-
-         devt=T;
-         devt.add(-1.0,temp);
-
-         vonmises= devt.frobenius_norm();
-         vonmises=sqrt(3.0/2.0)*vonmises;
-         eqvstrain=deve.frobenius_norm();
-         eqvstrain=sqrt(2.0/3.0)*eqvstrain;
-
-         //fill in post processing field values
-
-				 this->postprocessValues(cellID, q, 0, 0)=vonmises;
-         this->postprocessValues(cellID, q, 1, 0)=eqvstrain;
-				 if(this->userInputs.enableTwinning)
-	         this->postprocessValues(cellID, q, 2, 0)=twin_ouput[cellID][q];
 
 				 //evaluate elemental stiffness matrix, K_{ij} = N_{i,k}*C_{mknl}*F_{im}*F{jn}*N_{j,l} + N_{i,k}*F_{kl}*N_{j,l}*del{ij} dV
 				 for (unsigned int d1=0; d1<dofs_per_cell; ++d1) {
