@@ -17,7 +17,7 @@ void crystalPlasticity<dim>::getElementalValues(FEValues<dim>& fe_values,
      unsigned int cellID = fe_values.get_cell()->user_index();
      std::vector<unsigned int> local_dof_indices(dofs_per_cell);
      Vector<double> Ulocal(dofs_per_cell);
-
+	 
      typename DoFHandler<dim>::active_cell_iterator cell(& this->triangulation,
 							 fe_values.get_cell()->level(),
 							 fe_values.get_cell()->index(),
@@ -29,6 +29,7 @@ void crystalPlasticity<dim>::getElementalValues(FEValues<dim>& fe_values,
      }
 
      //local data structures
+	 FullMatrix<double> K_local(dofs_per_cell, dofs_per_cell)
      Vector<double> Rlocal (dofs_per_cell);
      K_local = 0.0; Rlocal = 0.0;
 
@@ -62,7 +63,6 @@ void crystalPlasticity<dim>::getElementalValues(FEValues<dim>& fe_values,
 	 }
 
 	 
-
 				 //evaluate elemental stiffness matrix, K_{ij} = N_{i,k}*C_{mknl}*F_{im}*F{jn}*N_{j,l} + N_{i,k}*F_{kl}*N_{j,l}*del{ij} dV
 				 for (unsigned int d1=0; d1<dofs_per_cell; ++d1) {
 			     unsigned int i = fe_values.get_fe().system_to_component_index(d1).first;

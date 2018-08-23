@@ -14,7 +14,7 @@ void crystalPlasticity<dim>::updateAfterIncrement()
 	unsigned int cellID = 0;
 	FullMatrix<double> rotmat(dim, dim);
 	Vector<double> quat1(4), rod(3), quat2(4), quatprod(4);
-	FullMatrix<double> K_local(dofs_per_cell, dofs_per_cell), CE_tau(dim, dim), E_tau(dim, dim), temp, temp2, temp3;
+	FullMatrix<double> CE_tau(dim, dim), E_tau(dim, dim), temp, temp2, temp3;
 
 
 	typename DoFHandler<dim>::active_cell_iterator cell = this->dofHandler.begin_active(), endc = this->dofHandler.end();
