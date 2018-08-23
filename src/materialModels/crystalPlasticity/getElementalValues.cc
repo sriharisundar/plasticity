@@ -29,8 +29,8 @@ void crystalPlasticity<dim>::getElementalValues(FEValues<dim>& fe_values,
      }
 
      //local data structures
-	 FullMatrix<double> K_local(dofs_per_cell, dofs_per_cell)
-     Vector<double> Rlocal (dofs_per_cell);
+	 FullMatrix<double> K_local(dofs_per_cell, dofs_per_cell);
+	 Vector<double> Rlocal(dofs_per_cell);
      K_local = 0.0; Rlocal = 0.0;
 
 
