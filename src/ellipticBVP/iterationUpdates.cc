@@ -16,7 +16,7 @@ void ellipticBVP<dim>::updateAfterIteration(){
 //method called after each iteration
 template <int dim>
 bool ellipticBVP<dim>::testConvergenceAfterIteration(){
-  //default method resets solution to previously converged solution if resetIncrement flagis true
+  //default method resets solution to previously converged solution if resetIncrement flag is true
   if (resetIncrement){
     solution=oldSolution;
     solutionWithGhosts=oldSolution;
