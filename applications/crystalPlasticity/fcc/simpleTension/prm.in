@@ -86,6 +86,10 @@ set Number of boundary conditions                = 4
 #delta T for every increment
 set Initial time increments                      = 0.01
 
+set Maximum number of time reductions
+
+set Time reduction percentage
+
 #Total simulation time
 set Total time                                   = 100
 
