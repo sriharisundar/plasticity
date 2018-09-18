@@ -56,7 +56,7 @@ void ellipticBVP<dim>::solve(){
     pcout << buffer;
   }
   else
-    for (;currentIncrement<totalIncrements; ++currentIncrement){
+    while(currentIncrement<totalIncrements){
     pcout << "\nincrement: "  << currentIncrement << std::endl;
     //call updateBeforeIncrement, if any
     updateBeforeIncrement();
@@ -81,8 +81,11 @@ void ellipticBVP<dim>::solve(){
       computing_timer.exit_section("postprocess");
       }
     else{
+      reduceTimeIncrement();
       successiveIncs=0;
+      continue;
     }
+    ++currentIncrement;
   }
 }
 #include "../../include/ellipticBVP_template_instantiations.h"

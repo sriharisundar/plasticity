@@ -8,7 +8,10 @@ void ellipticBVP<dim>::solveLinearSystem(ConstraintMatrix& constraintmatrix, mat
   vectorType completely_distributed_solutionInc (locally_owned_dofs, mpi_communicator);
   SolverControl solver_control(userInputs.maxLinearSolverIterations, userInputs.relLinearSolverTolerance*b.l2_norm());
   PETScWrappers::SolverCG solver(solver_control, mpi_communicator);
-  PETScWrappers::PreconditionJacobi preconditioner(A);
+  PETScWrappers::PreconditionBoomerAMG preconditioner;
+  PETScWrappers::PreconditionBoomerAMG::AdditionalData data;
+
+  preconditioner.initialize(A, data);
 
   //solve Ax=b
   try{
@@ -39,8 +42,11 @@ void ellipticBVP<dim>::solveLinearSystem2(ConstraintMatrix& constraintmatrix, ma
   vectorType completely_distributed_solutionInc (locally_owned_dofs_Scalar, mpi_communicator);
   SolverControl solver_control(userInputs.maxLinearSolverIterations, userInputs.relLinearSolverTolerance*b.l2_norm());
   PETScWrappers::SolverCG solver(solver_control, mpi_communicator);
-  PETScWrappers::PreconditionJacobi preconditioner(A);
+  PETScWrappers::PreconditionBoomerAMG preconditioner;
+  PETScWrappers::PreconditionBoomerAMG::AdditionalData data;
 
+  preconditioner.initialize(A, data);
+  
   //solve Ax=b
   try{
     solver.solve (A, completely_distributed_solutionInc, b, preconditioner);
