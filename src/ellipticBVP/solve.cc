@@ -10,9 +10,9 @@ void ellipticBVP<dim>::solve(){
   unsigned int successiveIncs=0;
 
   if(userInputs.enableAdaptiveTimeStepping){
-    for (;totalLoadFactor<totalIncrements;){
+    for (;totalLoadFactor<remainIncrements;){
       ++currentIncrement;
-      loadFactorSetByModel=std::min(loadFactorSetByModel, totalIncrements-totalLoadFactor);
+      loadFactorSetByModel=std::min(loadFactorSetByModel, remainIncrements-totalLoadFactor);
       pcout << "\nincrement: "  << currentIncrement << std::endl;
       char buffer[100];
       sprintf(buffer, "current load factor: %12.6e\ntotal load factor:   %12.6e\n", loadFactorSetByModel, totalLoadFactor);
@@ -56,7 +56,7 @@ void ellipticBVP<dim>::solve(){
     pcout << buffer;
   }
   else
-    while(currentIncrement<totalIncrements){
+    while(currentIncrement<remainIncrements){
     pcout << "\nincrement: "  << currentIncrement << std::endl;
     //call updateBeforeIncrement, if any
     updateBeforeIncrement();
@@ -73,6 +73,7 @@ void ellipticBVP<dim>::solve(){
 
       //increase loadFactorSetByModel, if succesiveIncForIncreasingTimeStep satisfied.
       successiveIncs++;
+      currentT+=delT;
       //output results to file
       computing_timer.enter_section("postprocess");
 

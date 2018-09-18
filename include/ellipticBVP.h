@@ -110,7 +110,7 @@ class ellipticBVP : public Subscriptor
   //misc variables
   double delT,totalT,cycleTime;
   unsigned int currentIteration, currentIncrement;
-  unsigned int totalIncrements;
+  unsigned int remainIncrements;
   bool resetIncrement;
   double loadFactorSetByModel;
   double totalLoadFactor;

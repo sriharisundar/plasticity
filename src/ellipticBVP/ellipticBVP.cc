@@ -33,7 +33,7 @@ ellipticBVP<dim>::ellipticBVP (userInputParameters _userInputs):
   }
   if(userInputs.enableCyclicLoading)
     cycleTime=4*userInputs.quarterCycleTime;
-  totalIncrements=totalT/delT;
+  remainIncrements=totalT/delT;
 }
 
 //destructor

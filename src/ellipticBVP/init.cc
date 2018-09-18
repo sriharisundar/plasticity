@@ -79,11 +79,11 @@ void ellipticBVP<dim>::init(){
       ss>>faceID>>dof;
       faceDOFConstrained[faceID-1][dof-1]=true;
       ss>>totalU;
-      deluConstraint[faceID-1][dof-1]=totalU/totalIncrements;
+      deluConstraint[faceID-1][dof-1]=totalU/remainIncrements;
     }
 
     if(userInputs.enableCyclicLoading){
-        deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]=deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]*totalIncrements*userInputs.delT/userInputs.quarterCycleTime;
+        deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]=deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]*remainIncrements*userInputs.delT/userInputs.quarterCycleTime;
       }
   }
 

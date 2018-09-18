@@ -79,7 +79,7 @@ void ellipticBVP<dim>::output(){
   dir+="/";
 
   //
-  unsigned int incrementDigits= (totalIncrements<10000 ? 4 : std::ceil(std::log10(totalIncrements))+1);
+  unsigned int incrementDigits= (remainIncrements<10000 ? 4 : std::ceil(std::log10(remainIncrements))+1);
   unsigned int domainDigits   = (Utilities::MPI::n_mpi_processes(mpi_communicator)<10000 ? 4 : std::ceil(std::log10(Utilities::MPI::n_mpi_processes(mpi_communicator)))+1);
 
   const std::string filename = (dir+"solution-" +

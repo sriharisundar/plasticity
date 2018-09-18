@@ -19,37 +19,35 @@ bool ellipticBVP<dim>::solveNonLinearSystem(){
     assemble();
     computing_timer.exit_section("assembly");
 
-    if (!resetIncrement){
-      //Calculate residual norms and check for convergence
-      currentNorm=residual.l2_norm();
-      initialNorm=std::max(initialNorm, currentNorm);
-      relNorm=currentNorm/initialNorm;
-      //print iteration information
-      sprintf(buffer,
-	      "nonlinear iteration %3u [current residual: %8.2e, initial residual: %8.2e, relative residual: %8.2e]\n",
-	      currentIteration,
-	      currentNorm,
-	      initialNorm,
-	      relNorm);
-      pcout << buffer;
+    //Calculate residual norms and check for convergence
+    currentNorm=residual.l2_norm();
+    initialNorm=std::max(initialNorm, currentNorm);
+    relNorm=currentNorm/initialNorm;
+    //print iteration information
+    sprintf(buffer,
+      "nonlinear iteration %3u [current residual: %8.2e, initial residual: %8.2e, relative residual: %8.2e]\n",
+      currentIteration,
+      currentNorm,
+      initialNorm,
+      relNorm);
+    pcout << buffer;
 
-	  //check for convergence in abs tolerance
-	  if (currentNorm<userInputs.absNonLinearTolerance) {
-		  pcout << "nonlinear iterations converged in absolute norm\n";
-		  break;
-	  }
-	  //check for convergence in relative tolerance
-	  else if (relNorm<userInputs.relNonLinearTolerance) {
-		  pcout << "nonlinear iterations converged in relative norm\n";
-		  break;
-	  }
-
-      //if not converged, solveLinearSystem Ax=b
-      computing_timer.enter_section("solve");
-      solveLinearSystem(constraints, jacobian, residual, solution, solutionWithGhosts, solutionIncWithGhosts);
-      computing_timer.exit_section("solve");
-      currentIteration++;
+    //check for convergence in abs tolerance
+    if (currentNorm<userInputs.absNonLinearTolerance) {
+  	  pcout << "nonlinear iterations converged in absolute norm\n";
+  	  break;
     }
+    //check for convergence in relative tolerance
+    else if (relNorm<userInputs.relNonLinearTolerance) {
+  	  pcout << "nonlinear iterations converged in relative norm\n";
+  	  break;
+    }
+
+    //if not converged, solveLinearSystem Ax=b
+    computing_timer.enter_section("solve");
+    solveLinearSystem(constraints, jacobian, residual, solution, solutionWithGhosts, solutionIncWithGhosts);
+    computing_timer.exit_section("solve");
+    currentIteration++;
 
 	//convergence test after iteration
 	bool convFlag = testConvergenceAfterIteration();
@@ -89,7 +87,7 @@ bool ellipticBVP<dim>::testConvergenceAfterIteration(){
     return false;
   }
   return true;
-  
+
 }
 
 #include "../../include/ellipticBVP_template_instantiations.h"
