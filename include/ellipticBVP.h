@@ -110,7 +110,8 @@ class ellipticBVP : public Subscriptor
   std::vector<std::vector<double>> deluConstraint;
 
   //misc variables
-  double delT,totalT,cycleTime;
+  double delT,totalT,cycleTime,currentT;
+  unsigned int delTreduced;
   unsigned int currentIteration, currentIncrement;
   unsigned int remainIncrements;
   bool resetIncrement;

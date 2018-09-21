@@ -40,6 +40,10 @@ public:
   double delT; // Time increment
   double totalTime; // Total simulation time
 
+  bool reduceTimeIncrement;
+  unsigned int numberofDelTReductions;
+  double timeReductionFactor;
+
   std::string BCfilename; // Boundary conditions file
   unsigned int BCheaderLines; // No. of header Lines in BC file
   unsigned int NumberofBCs; // No. of boundary conditions
@@ -48,7 +52,7 @@ public:
   unsigned int cyclicLoadingFace;
   unsigned int cyclicLoadingDOF;
   double quarterCycleTime;
-  
+
   /*Solution output parameters*/
   bool writeOutput; // flag to write output vtu and pvtu files
   std::string outputDirectory;

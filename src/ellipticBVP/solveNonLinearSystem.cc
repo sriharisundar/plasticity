@@ -52,8 +52,8 @@ bool ellipticBVP<dim>::solveNonLinearSystem(){
     }
 
 	//convergence test after iteration
-	bool convFlag = testConvergenceAfterIteration();
-	if (!convFlag) { return false; }
+	//bool convFlag = testConvergenceAfterIteration();
+	//if (!convFlag) { return false; }
 
     //call updateAfterIteration, if any
     updateAfterIteration();
@@ -61,10 +61,13 @@ bool ellipticBVP<dim>::solveNonLinearSystem(){
 
   //check if maxNonLinearIterations reached
   if (currentIteration >= userInputs.maxNonLinearIterations) {
-	  pcout << "nonlinear iterations did not converge in maxNonLinearIterations\n";
-	  if (userInputs.stopOnConvergenceFailure) { exit(1); }
+	  pcout << "Non-linear iterations did not converge in maxNonLinearIterations\n";
+	  if (!userInputs.reduceTimeIncrement) {
+      pcout << "Try switching on the reduceTimeIncrement flag\n";
+      exit(1); }
 	  else { pcout << "Reducing time increment\n";
            resetIncrement=true;
+           return false;
     }
   }
 
@@ -84,10 +87,10 @@ bool ellipticBVP<dim>::testConvergenceAfterIteration(){
 
     resetIncrement=false;
     char buffer[100];
-    sprintf(buffer,
-	    "current increment reset by model. Restarting increment with loadFactorSetByModel: %12.6e\n",
-	    loadFactorSetByModel);
-    pcout << buffer;
+    //sprintf(buffer,
+	  //  "current increment reset by model. Restarting increment with loadFactorSetByModel: %12.6e\n",
+	  //  loadFactorSetByModel);
+    //pcout << buffer;
     return false;
   }
   return true;

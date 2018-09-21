@@ -24,7 +24,8 @@ ellipticBVP<dim>::ellipticBVP (userInputParameters _userInputs):
   totalLoadFactor(0.0),
   pcout (std::cout, Utilities::MPI::this_mpi_process(MPI_COMM_WORLD)==0),
   computing_timer (pcout, TimerOutput::summary, TimerOutput::wall_times),
-  numPostProcessedFields(0)
+  numPostProcessedFields(0),
+  delTreduced(0)
 {
   //Nodal Solution names - this is for writing the output file
   for (unsigned int i=0; i<dim; ++i){

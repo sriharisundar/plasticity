@@ -86,9 +86,14 @@ set Number of boundary conditions                = 4
 #delta T for every increment
 set Initial time increments                      = 0.01
 
+#Flag to indicate if time increment can be reduced
+set Reduce time increment                        = true
+
+#Number of the times delT can be reduced before quitting simulation
 set Maximum number of time reductions            = 4
 
-set Time reduction percentage                    = 2
+#Amount of reduction in the time increment
+set Time reduction factor                        = 0.5
 
 #Total simulation time
 set Total time                                   = 100

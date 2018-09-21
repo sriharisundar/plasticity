@@ -51,8 +51,12 @@ pcout (std::cout, dealii::Utilities::MPI::this_mpi_process(MPI_COMM_WORLD)==0)
   if(skipOutputSteps<=0)
       skipOutputSteps=1;
 
-  delT=parameter_handler.get_double("Time increments");
+  delT=parameter_handler.get_double("Initial time increments");
   totalTime=parameter_handler.get_double("Total time");
+
+  reduceTimeIncrement=parameter_handler.get_bool("Reduce time increment");
+  numberofDelTReductions=parameter_handler.get_integer("Maximum number of time reductions");
+  timeReductionFactor=parameter_handler.get_double("Time reduction factor");
 
   BCfilename=parameter_handler.get("Boundary condition filename");
   BCheaderLines=parameter_handler.get_integer("BC file number of header lines");
@@ -160,8 +164,12 @@ void userInputParameters::declare_parameters(dealii::ParameterHandler & paramete
   parameter_handler.declare_entry("Use external mesh","false",dealii::Patterns::Bool(),"Flag to indicate whether to use external mesh");
   parameter_handler.declare_entry("Name of file containing external mesh","",dealii::Patterns::Anything(),"Name of external mesh file");
 
-  parameter_handler.declare_entry("Time increments","-1",dealii::Patterns::Double(),"delta T for every increment");
+  parameter_handler.declare_entry("Initial time increments","-1",dealii::Patterns::Double(),"delta T for every increment");
   parameter_handler.declare_entry("Total time","-1",dealii::Patterns::Double(),"Total simulation time");
+  
+  parameter_handler.declare_entry("Reduce time increment","false",dealii::Patterns::Bool(),"Flag to indicate if time increment can be reduced");
+  parameter_handler.declare_entry("Maximum number of time reductions","0",dealii::Patterns::Integer(),"Number of the times delT can be reduced before quitting simulation");
+  parameter_handler.declare_entry("Time reduction factor","-1",dealii::Patterns::Double(),"Amount of reduction in the time increment");
 
   parameter_handler.declare_entry("Boundary condition filename","boundaryConditions.txt",dealii::Patterns::Anything(),"File name containing BC information");
   parameter_handler.declare_entry("BC file number of header lines","1",dealii::Patterns::Integer(),"BC file number of header lines");

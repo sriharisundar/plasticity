@@ -82,7 +82,7 @@ void ellipticBVP<dim>::solve(){
       computing_timer.exit_section("postprocess");
       }
     else{
-      if(delTreduced<userInputs.numberOfdelTreductions)
+      if(delTreduced<userInputs.numberofDelTReductions)
         reduceTimeIncrement();
       else{
         pcout<<"Problem doesn't converge after time step reductions";
