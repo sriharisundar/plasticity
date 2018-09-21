@@ -46,7 +46,7 @@ void ellipticBVP<dim>::solveLinearSystem2(ConstraintMatrix& constraintmatrix, ma
   PETScWrappers::PreconditionBoomerAMG::AdditionalData data;
 
   preconditioner.initialize(A, data);
-  
+
   //solve Ax=b
   try{
     solver.solve (A, completely_distributed_solutionInc, b, preconditioner);

@@ -92,6 +92,8 @@ class ellipticBVP : public Subscriptor
   virtual void updateBeforeIncrement();
   virtual void updateAfterIncrement();
 
+  void reduceTimeIncrement();
+
   //methods to apply dirichlet BC's and initial conditions
   void applyDirichletBCs();
   void applyInitialConditions();
