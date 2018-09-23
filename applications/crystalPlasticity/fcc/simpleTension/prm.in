@@ -90,10 +90,10 @@ set Initial time increments                      = 0.01
 set Reduce time increment                        = true
 
 #Number of the times delT can be reduced before quitting simulation
-set Maximum number of time reductions            = 4
+set Maximum number of time reductions            = 2
 
 #Amount of reduction in the time increment
-set Time reduction factor                        = 0.5
+set Time reduction factor                        = 0.1
 
 #Total simulation time
 set Total time                                   = 100
@@ -102,16 +102,16 @@ set Total time                                   = 100
 set Maximum linear solver iterations             = 50000
 
 # Relative linear solver tolerance
-set Relative linear solver tolerance             = 1.0e-5
+set Relative linear solver tolerance             = 1.0e-6
 
 # Maximum no. of non-linear iterations
 set Maximum non linear iterations                = 4
 
 # Non-linear solver tolerance
-set Absolute nonLinear solver tolerance          = 1.0e-5
+set Absolute nonLinear solver tolerance          = 1.0e-7
 
-# Relative non-linear solver tolerance
-set Relative nonLinear solver tolerance          = 1.0e-3
+# Relative non-linear solver toleranc
+set Relative nonLinear solver tolerance          = 1.0e-7
 
 ####################################
 # Elasticity parameters

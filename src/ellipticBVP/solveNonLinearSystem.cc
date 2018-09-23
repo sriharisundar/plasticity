@@ -62,12 +62,17 @@ bool ellipticBVP<dim>::solveNonLinearSystem(){
   //check if maxNonLinearIterations reached
   if (currentIteration >= userInputs.maxNonLinearIterations) {
 	  pcout << "Non-linear iterations did not converge in maxNonLinearIterations\n";
-	  if (!userInputs.reduceTimeIncrement) {
-      pcout << "Try switching on the reduceTimeIncrement flag\n";
-      exit(1); }
-	  else { pcout << "Reducing time increment\n";
-           resetIncrement=true;
-           return false;
+	  if (!userInputs.reduceTimeIncrement || delTreduced>=userInputs.numberofDelTReductions) {
+        if(userInputs.stopOnConvergenceFailure)
+          exit(1);
+        else{
+          pcout<<"Continuing\n";
+          return true;
+        }
+    }
+	  else{
+     //resetIncrement=true;
+     return false;
     }
   }
 
