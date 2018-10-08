@@ -57,7 +57,7 @@ void ellipticBVP<dim>::solve(){
   }
   else
     while(currentT<totalT){
-    pcout << "\nincrement: "  << currentIncrement << std::endl;
+    pcout << "\Current time: "  << currentT << std::endl;
     //call updateBeforeIncrement, if any
     updateBeforeIncrement();
 
