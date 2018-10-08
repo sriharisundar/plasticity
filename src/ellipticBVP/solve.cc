@@ -56,7 +56,7 @@ void ellipticBVP<dim>::solve(){
     pcout << buffer;
   }
   else
-    while(currentIncrement<remainIncrements){
+    while(currentT<totalT){
     pcout << "\nincrement: "  << currentIncrement << std::endl;
     //call updateBeforeIncrement, if any
     updateBeforeIncrement();

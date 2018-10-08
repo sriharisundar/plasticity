@@ -10,7 +10,7 @@ void ellipticBVP<dim>::reduceTimeIncrement(){
 
   delT=delT*userInputs.timeReductionFactor;
 
-  remainIncrements=(totalT-currentT)/delT+currentIncrement;
+  //remainIncrements=(totalT-currentT)/delT+currentIncrement;
 
   for(faceID=0;faceID<6;faceID++)
     for(dof=0;dof<3;faceID++)
