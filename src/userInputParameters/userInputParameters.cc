@@ -170,7 +170,7 @@ void userInputParameters::declare_parameters(dealii::ParameterHandler & paramete
 
   parameter_handler.declare_entry("Reduce time increment","false",dealii::Patterns::Bool(),"Flag to indicate if time increment can be reduced");
   parameter_handler.declare_entry("Maximum number of time reductions","0",dealii::Patterns::Integer(),"Number of the times delT can be reduced before quitting simulation");
-  parameter_handler.declare_entry("Time reduction factor","-1",dealii::Patterns::Double(),"Amount of reduction in the time increment");
+  parameter_handler.declare_entry("Time reduction factor","1",dealii::Patterns::Double(),"Amount of reduction in the time increment");
 
   parameter_handler.declare_entry("Boundary condition filename","boundaryConditions.txt",dealii::Patterns::Anything(),"File name containing BC information");
   parameter_handler.declare_entry("BC file number of header lines","1",dealii::Patterns::Integer(),"BC file number of header lines");
