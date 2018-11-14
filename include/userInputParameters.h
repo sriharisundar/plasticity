@@ -47,6 +47,7 @@ public:
   std::string BCfilename; // Boundary conditions file
   unsigned int BCheaderLines; // No. of header Lines in BC file
   unsigned int NumberofBCs; // No. of boundary conditions
+  bool useVelocityGrad; // Specify whether to use velocity gradient for BC
 
   bool enableCyclicLoading;
   unsigned int cyclicLoadingFace;

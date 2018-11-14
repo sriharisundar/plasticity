@@ -61,6 +61,7 @@ pcout (std::cout, dealii::Utilities::MPI::this_mpi_process(MPI_COMM_WORLD)==0)
   BCfilename=parameter_handler.get("Boundary condition filename");
   BCheaderLines=parameter_handler.get_integer("BC file number of header lines");
   NumberofBCs=parameter_handler.get_integer("Number of boundary conditions");
+  useVelocityGrad=parameter_handler.get_bool("Use velocity gradient BC");
 
   enableCyclicLoading=parameter_handler.get_bool("Enable cyclic loading");
   cyclicLoadingFace=parameter_handler.get_integer("Cyclic loading face");
@@ -166,7 +167,7 @@ void userInputParameters::declare_parameters(dealii::ParameterHandler & paramete
 
   parameter_handler.declare_entry("Initial time increments","-1",dealii::Patterns::Double(),"delta T for every increment");
   parameter_handler.declare_entry("Total time","-1",dealii::Patterns::Double(),"Total simulation time");
-  
+
   parameter_handler.declare_entry("Reduce time increment","false",dealii::Patterns::Bool(),"Flag to indicate if time increment can be reduced");
   parameter_handler.declare_entry("Maximum number of time reductions","0",dealii::Patterns::Integer(),"Number of the times delT can be reduced before quitting simulation");
   parameter_handler.declare_entry("Time reduction factor","-1",dealii::Patterns::Double(),"Amount of reduction in the time increment");
@@ -174,6 +175,7 @@ void userInputParameters::declare_parameters(dealii::ParameterHandler & paramete
   parameter_handler.declare_entry("Boundary condition filename","boundaryConditions.txt",dealii::Patterns::Anything(),"File name containing BC information");
   parameter_handler.declare_entry("BC file number of header lines","1",dealii::Patterns::Integer(),"BC file number of header lines");
   parameter_handler.declare_entry("Number of boundary conditions","1",dealii::Patterns::Integer(),"Number of boundary conditions");
+  parameter_handler.declare_entry("Use velocity gradient BC","false",dealii::Patterns::Bool(),"Flag to indicate whether to use velgrad");
 
   parameter_handler.declare_entry("Enable cyclic loading","false",dealii::Patterns::Bool(),"Flag to indicate if cyclic loading is enabled");
   parameter_handler.declare_entry("Cyclic loading face","1",dealii::Patterns::Integer(),"Face that is cyclically loaded");

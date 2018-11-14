@@ -109,6 +109,10 @@ class ellipticBVP : public Subscriptor
   std::vector<std::vector<bool>> faceDOFConstrained;
   std::vector<std::vector<double>> deluConstraint;
 
+  FullMatrix<double> Fprev=IdentityMatrix(dim);
+  FullMatrix<double> F,deltaF;
+  FullMatrix<double> targetVelGrad;
+
   //misc variables
   double delT,totalT,cycleTime,currentT;
   unsigned int delTreduced;

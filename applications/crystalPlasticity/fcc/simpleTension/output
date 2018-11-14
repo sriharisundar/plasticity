@@ -1,0 +1,1250 @@
+Twinning is not enabled 
+reading voxel data file
+reading orientation euler angles file
+generating problem mesh
+number of MPI processes: 1
+number of elements: 1
+number of degrees of freedom: 24
+Reading boundary conditions
+begin solve...
+
+
+increment: 0
+nonlinear iteration   0 [current residual: 1.03e+00, initial residual: 1.03e+00, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.30e-03, initial residual: 1.03e+00, relative residual: 7.08e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 6.11e-05, initial residual: 1.03e+00, relative residual: 5.93e-05]
+linear system solved in   4 iterations
+nonlinear iteration   3 [current residual: 4.64e-08, initial residual: 1.03e+00, relative residual: 4.50e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-00000.pvtu and results/projectedFields-00000.pvtu 
+
+
+increment: 1
+nonlinear iteration   0 [current residual: 1.03e+00, initial residual: 1.03e+00, relative residual: 1.00e+00]
+linear system solved in  61 iterations
+nonlinear iteration   1 [current residual: 4.50e-05, initial residual: 1.03e+00, relative residual: 4.37e-05]
+linear system solved in   2 iterations
+nonlinear iteration   2 [current residual: 8.41e-08, initial residual: 1.03e+00, relative residual: 8.16e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-00001.pvtu and results/projectedFields-00001.pvtu 
+
+
+increment: 2
+nonlinear iteration   0 [current residual: 1.03e+00, initial residual: 1.03e+00, relative residual: 1.00e+00]
+linear system solved in   8 iterations
+nonlinear iteration   1 [current residual: 7.77e-05, initial residual: 1.03e+00, relative residual: 7.55e-05]
+linear system solved in   7 iterations
+nonlinear iteration   2 [current residual: 1.10e-08, initial residual: 1.03e+00, relative residual: 1.07e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-00002.pvtu and results/projectedFields-00002.pvtu 
+
+
+increment: 3
+nonlinear iteration   0 [current residual: 1.03e+00, initial residual: 1.03e+00, relative residual: 1.00e+00]
+linear system solved in   6 iterations
+nonlinear iteration   1 [current residual: 2.48e-04, initial residual: 1.03e+00, relative residual: 2.40e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 1.14e-07, initial residual: 1.03e+00, relative residual: 1.10e-07]
+
+Warning: solver did not converge in 34 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   3 [current residual: 2.66e-11, initial residual: 1.03e+00, relative residual: 2.58e-11]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-00003.pvtu and results/projectedFields-00003.pvtu 
+
+
+increment: 4
+nonlinear iteration   0 [current residual: 1.03e+00, initial residual: 1.03e+00, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.21e-03, initial residual: 1.03e+00, relative residual: 7.00e-03]
+linear system solved in   9 iterations
+nonlinear iteration   2 [current residual: 1.01e-06, initial residual: 1.03e+00, relative residual: 9.79e-07]
+linear system solved in   2 iterations
+nonlinear iteration   3 [current residual: 6.49e-09, initial residual: 1.03e+00, relative residual: 6.30e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-00004.pvtu and results/projectedFields-00004.pvtu 
+
+
+increment: 5
+nonlinear iteration   0 [current residual: 1.03e+00, initial residual: 1.03e+00, relative residual: 1.00e+00]
+linear system solved in   8 iterations
+nonlinear iteration   1 [current residual: 1.47e-04, initial residual: 1.03e+00, relative residual: 1.43e-04]
+linear system solved in 1377 iterations
+nonlinear iteration   2 [current residual: 2.10e-05, initial residual: 1.03e+00, relative residual: 2.04e-05]
+linear system solved in   4 iterations
+nonlinear iteration   3 [current residual: 6.81e-09, initial residual: 1.03e+00, relative residual: 6.61e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-00005.pvtu and results/projectedFields-00005.pvtu 
+
+
+increment: 6
+nonlinear iteration   0 [current residual: 1.03e+00, initial residual: 1.03e+00, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 7 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 1.66e-04, initial residual: 1.03e+00, relative residual: 1.61e-04]
+linear system solved in   5 iterations
+nonlinear iteration   2 [current residual: 1.68e-07, initial residual: 1.03e+00, relative residual: 1.64e-07]
+linear system solved in   4 iterations
+nonlinear iteration   3 [current residual: 1.24e-10, initial residual: 1.03e+00, relative residual: 1.20e-10]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-00006.pvtu and results/projectedFields-00006.pvtu 
+
+
+increment: 7
+nonlinear iteration   0 [current residual: 1.03e+00, initial residual: 1.03e+00, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.15e-03, initial residual: 1.03e+00, relative residual: 6.94e-03]
+
+Warning: solver did not converge in 910 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 1.04e-01, initial residual: 1.03e+00, relative residual: 1.01e-01]
+linear system solved in   2 iterations
+nonlinear iteration   3 [current residual: 2.54e-04, initial residual: 1.03e+00, relative residual: 2.47e-04]
+linear system solved in   3 iterations
+Non-linear iterations did not converge in maxNonLinearIterations
+Reducing time increment
+
+increment: 7
+nonlinear iteration   0 [current residual: 1.03e-01, initial residual: 1.03e-01, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 4.96e-05, initial residual: 1.03e-01, relative residual: 4.82e-04]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 1.26e-07, initial residual: 1.03e-01, relative residual: 1.23e-06]
+linear system solved in   3 iterations
+nonlinear iteration   3 [current residual: 2.37e-10, initial residual: 1.03e-01, relative residual: 2.30e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-000007.pvtu and results/projectedFields-000007.pvtu 
+
+
+increment: 8
+nonlinear iteration   0 [current residual: 1.03e-01, initial residual: 1.03e-01, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.15e-04, initial residual: 1.03e-01, relative residual: 6.94e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 6.14e-06, initial residual: 1.03e-01, relative residual: 5.96e-05]
+linear system solved in   2 iterations
+nonlinear iteration   3 [current residual: 7.01e-08, initial residual: 1.03e-01, relative residual: 6.80e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-000008.pvtu and results/projectedFields-000008.pvtu 
+
+
+increment: 9
+nonlinear iteration   0 [current residual: 1.03e-01, initial residual: 1.03e-01, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 16 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.68e-05, initial residual: 1.03e-01, relative residual: 2.61e-04]
+
+Warning: solver did not converge in 10 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 5.68e-09, initial residual: 1.03e-01, relative residual: 5.52e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-000009.pvtu and results/projectedFields-000009.pvtu 
+
+
+increment: 10
+nonlinear iteration   0 [current residual: 1.03e-01, initial residual: 1.03e-01, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 5 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 6.55e-03, initial residual: 1.03e-01, relative residual: 6.36e-02]
+
+Warning: solver did not converge in 33 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 5.31e-02, initial residual: 1.03e-01, relative residual: 5.16e-01]
+linear system solved in 104 iterations
+nonlinear iteration   3 [current residual: 5.18e-02, initial residual: 1.03e-01, relative residual: 5.03e-01]
+linear system solved in   4 iterations
+Non-linear iterations did not converge in maxNonLinearIterations
+Reducing time increment
+
+increment: 10
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 5 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 5.05e-06, initial residual: 1.03e-02, relative residual: 4.90e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 3.15e-09, initial residual: 1.03e-02, relative residual: 3.06e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000010.pvtu and results/projectedFields-0000010.pvtu 
+
+
+increment: 11
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.16e-05, initial residual: 1.03e-02, relative residual: 1.13e-03]
+linear system solved in   5 iterations
+nonlinear iteration   2 [current residual: 2.45e-08, initial residual: 1.03e-02, relative residual: 2.38e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000011.pvtu and results/projectedFields-0000011.pvtu 
+
+
+increment: 12
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 6 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.14e-05, initial residual: 1.03e-02, relative residual: 2.08e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 2.12e-07, initial residual: 1.03e-02, relative residual: 2.06e-05]
+
+Warning: solver did not converge in 10000 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   3 [current residual: 1.55e-05, initial residual: 1.03e-02, relative residual: 1.51e-03]
+linear system solved in   2 iterations
+Non-linear iterations did not converge in maxNonLinearIterations
+Continuing
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000012.pvtu and results/projectedFields-0000012.pvtu 
+
+
+increment: 13
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 23 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.30e-06, initial residual: 1.03e-02, relative residual: 2.23e-04]
+
+Warning: solver did not converge in 132 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 1.55e-05, initial residual: 1.03e-02, relative residual: 1.51e-03]
+
+Warning: solver did not converge in 18 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   3 [current residual: 5.35e-04, initial residual: 1.03e-02, relative residual: 5.19e-02]
+
+Warning: solver did not converge in 365 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+Non-linear iterations did not converge in maxNonLinearIterations
+Continuing
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000013.pvtu and results/projectedFields-0000013.pvtu 
+
+
+increment: 14
+nonlinear iteration   0 [current residual: 9.85e-03, initial residual: 9.85e-03, relative residual: 1.00e+00]
+linear system solved in  10 iterations
+nonlinear iteration   1 [current residual: 2.52e-06, initial residual: 9.85e-03, relative residual: 2.56e-04]
+
+Warning: solver did not converge in 7 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 9.98e-10, initial residual: 9.85e-03, relative residual: 1.01e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000014.pvtu and results/projectedFields-0000014.pvtu 
+
+
+increment: 15
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.15e-05, initial residual: 1.03e-02, relative residual: 6.94e-03]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 3.45e-08, initial residual: 1.03e-02, relative residual: 3.35e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000015.pvtu and results/projectedFields-0000015.pvtu 
+
+
+increment: 16
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.15e-05, initial residual: 1.03e-02, relative residual: 6.94e-03]
+linear system solved in   5 iterations
+nonlinear iteration   2 [current residual: 7.45e-08, initial residual: 1.03e-02, relative residual: 7.23e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000016.pvtu and results/projectedFields-0000016.pvtu 
+
+
+increment: 17
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   6 iterations
+nonlinear iteration   1 [current residual: 2.80e-06, initial residual: 1.03e-02, relative residual: 2.72e-04]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 4.05e-09, initial residual: 1.03e-02, relative residual: 3.93e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000017.pvtu and results/projectedFields-0000017.pvtu 
+
+
+increment: 18
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.15e-05, initial residual: 1.03e-02, relative residual: 6.94e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 6.14e-07, initial residual: 1.03e-02, relative residual: 5.96e-05]
+linear system solved in   3 iterations
+nonlinear iteration   3 [current residual: 2.17e-09, initial residual: 1.03e-02, relative residual: 2.11e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000018.pvtu and results/projectedFields-0000018.pvtu 
+
+
+increment: 19
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.15e-05, initial residual: 1.03e-02, relative residual: 6.94e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 6.14e-07, initial residual: 1.03e-02, relative residual: 5.96e-05]
+
+Warning: solver did not converge in 750 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   3 [current residual: 1.54e-08, initial residual: 1.03e-02, relative residual: 1.50e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000019.pvtu and results/projectedFields-0000019.pvtu 
+
+
+increment: 20
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   9 iterations
+nonlinear iteration   1 [current residual: 2.34e-06, initial residual: 1.03e-02, relative residual: 2.28e-04]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 9.68e-10, initial residual: 1.03e-02, relative residual: 9.39e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000020.pvtu and results/projectedFields-0000020.pvtu 
+
+
+increment: 21
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 10 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.54e-06, initial residual: 1.03e-02, relative residual: 2.46e-04]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 3.33e-10, initial residual: 1.03e-02, relative residual: 3.23e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000021.pvtu and results/projectedFields-0000021.pvtu 
+
+
+increment: 22
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   7 iterations
+nonlinear iteration   1 [current residual: 1.82e-06, initial residual: 1.03e-02, relative residual: 1.77e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 3.14e-09, initial residual: 1.03e-02, relative residual: 3.04e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000022.pvtu and results/projectedFields-0000022.pvtu 
+
+
+increment: 23
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 5.01e-06, initial residual: 1.03e-02, relative residual: 4.86e-04]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 1.24e-08, initial residual: 1.03e-02, relative residual: 1.21e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000023.pvtu and results/projectedFields-0000023.pvtu 
+
+
+increment: 24
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 5.01e-06, initial residual: 1.03e-02, relative residual: 4.87e-04]
+
+Warning: solver did not converge in 41 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 8.91e-07, initial residual: 1.03e-02, relative residual: 8.65e-05]
+linear system solved in   2 iterations
+nonlinear iteration   3 [current residual: 1.19e-08, initial residual: 1.03e-02, relative residual: 1.15e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000024.pvtu and results/projectedFields-0000024.pvtu 
+
+
+increment: 25
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 8 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 1.91e-06, initial residual: 1.03e-02, relative residual: 1.86e-04]
+linear system solved in   2 iterations
+nonlinear iteration   2 [current residual: 3.29e-08, initial residual: 1.03e-02, relative residual: 3.20e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000025.pvtu and results/projectedFields-0000025.pvtu 
+
+
+increment: 26
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   2 iterations
+nonlinear iteration   2 [current residual: 7.87e-08, initial residual: 1.03e-02, relative residual: 7.64e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000026.pvtu and results/projectedFields-0000026.pvtu 
+
+
+increment: 27
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 8.66e-09, initial residual: 1.03e-02, relative residual: 8.40e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000027.pvtu and results/projectedFields-0000027.pvtu 
+
+
+increment: 28
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.16e-05, initial residual: 1.03e-02, relative residual: 1.13e-03]
+linear system solved in   9 iterations
+nonlinear iteration   2 [current residual: 1.98e-09, initial residual: 1.03e-02, relative residual: 1.92e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000028.pvtu and results/projectedFields-0000028.pvtu 
+
+
+increment: 29
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 38 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.32e-06, initial residual: 1.03e-02, relative residual: 2.25e-04]
+
+Warning: solver did not converge in 10000 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 8.22e-06, initial residual: 1.03e-02, relative residual: 7.98e-04]
+linear system solved in   4 iterations
+nonlinear iteration   3 [current residual: 2.19e-10, initial residual: 1.03e-02, relative residual: 2.13e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000029.pvtu and results/projectedFields-0000029.pvtu 
+
+
+increment: 30
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 8 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 1.88e-06, initial residual: 1.03e-02, relative residual: 1.82e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 1.22e-09, initial residual: 1.03e-02, relative residual: 1.19e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000030.pvtu and results/projectedFields-0000030.pvtu 
+
+
+increment: 31
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   5 iterations
+nonlinear iteration   2 [current residual: 3.59e-09, initial residual: 1.03e-02, relative residual: 3.49e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000031.pvtu and results/projectedFields-0000031.pvtu 
+
+
+increment: 32
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   5 iterations
+nonlinear iteration   2 [current residual: 3.59e-09, initial residual: 1.03e-02, relative residual: 3.48e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000032.pvtu and results/projectedFields-0000032.pvtu 
+
+
+increment: 33
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in  60 iterations
+nonlinear iteration   1 [current residual: 2.30e-06, initial residual: 1.03e-02, relative residual: 2.23e-04]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 2.66e-10, initial residual: 1.03e-02, relative residual: 2.58e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000033.pvtu and results/projectedFields-0000033.pvtu 
+
+
+increment: 34
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.15e-05, initial residual: 1.03e-02, relative residual: 6.94e-03]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 3.42e-08, initial residual: 1.03e-02, relative residual: 3.32e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000034.pvtu and results/projectedFields-0000034.pvtu 
+
+
+increment: 35
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 56 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.31e-06, initial residual: 1.03e-02, relative residual: 2.24e-04]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 2.68e-10, initial residual: 1.03e-02, relative residual: 2.60e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000035.pvtu and results/projectedFields-0000035.pvtu 
+
+
+increment: 36
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 3.50e-09, initial residual: 1.03e-02, relative residual: 3.40e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000036.pvtu and results/projectedFields-0000036.pvtu 
+
+
+increment: 37
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   7 iterations
+nonlinear iteration   1 [current residual: 1.86e-06, initial residual: 1.03e-02, relative residual: 1.81e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 3.05e-09, initial residual: 1.03e-02, relative residual: 2.96e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000037.pvtu and results/projectedFields-0000037.pvtu 
+
+
+increment: 38
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in 237 iterations
+nonlinear iteration   1 [current residual: 2.31e-06, initial residual: 1.03e-02, relative residual: 2.25e-04]
+
+Warning: solver did not converge in 7 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 1.09e-09, initial residual: 1.03e-02, relative residual: 1.06e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000038.pvtu and results/projectedFields-0000038.pvtu 
+
+
+increment: 39
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 8.64e-09, initial residual: 1.03e-02, relative residual: 8.39e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000039.pvtu and results/projectedFields-0000039.pvtu 
+
+
+increment: 40
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   6 iterations
+nonlinear iteration   1 [current residual: 2.84e-06, initial residual: 1.03e-02, relative residual: 2.76e-04]
+
+Warning: solver did not converge in 8 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 3.92e-10, initial residual: 1.03e-02, relative residual: 3.80e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000040.pvtu and results/projectedFields-0000040.pvtu 
+
+
+increment: 41
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   2 iterations
+nonlinear iteration   2 [current residual: 7.87e-08, initial residual: 1.03e-02, relative residual: 7.64e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000041.pvtu and results/projectedFields-0000041.pvtu 
+
+
+increment: 42
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 7 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.06e-06, initial residual: 1.03e-02, relative residual: 2.00e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 8.47e-10, initial residual: 1.03e-02, relative residual: 8.22e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000042.pvtu and results/projectedFields-0000042.pvtu 
+
+
+increment: 43
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.15e-05, initial residual: 1.03e-02, relative residual: 6.94e-03]
+
+Warning: solver did not converge in 13 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 1.04e-08, initial residual: 1.03e-02, relative residual: 1.01e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000043.pvtu and results/projectedFields-0000043.pvtu 
+
+
+increment: 44
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+
+Warning: solver did not converge in 10000 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 1.59e-05, initial residual: 1.03e-02, relative residual: 1.54e-03]
+linear system solved in   4 iterations
+nonlinear iteration   3 [current residual: 5.70e-09, initial residual: 1.03e-02, relative residual: 5.53e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000044.pvtu and results/projectedFields-0000044.pvtu 
+
+
+increment: 45
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 5.09e-06, initial residual: 1.03e-02, relative residual: 4.94e-04]
+linear system solved in   8 iterations
+nonlinear iteration   2 [current residual: 5.06e-10, initial residual: 1.03e-02, relative residual: 4.92e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000045.pvtu and results/projectedFields-0000045.pvtu 
+
+
+increment: 46
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   5 iterations
+nonlinear iteration   2 [current residual: 3.55e-09, initial residual: 1.03e-02, relative residual: 3.44e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000046.pvtu and results/projectedFields-0000046.pvtu 
+
+
+increment: 47
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.17e-05, initial residual: 1.03e-02, relative residual: 1.14e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 9.78e-08, initial residual: 1.03e-02, relative residual: 9.49e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000047.pvtu and results/projectedFields-0000047.pvtu 
+
+
+increment: 48
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.56e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 8.62e-09, initial residual: 1.03e-02, relative residual: 8.37e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000048.pvtu and results/projectedFields-0000048.pvtu 
+
+
+increment: 49
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.94e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 6.14e-07, initial residual: 1.03e-02, relative residual: 5.96e-05]
+linear system solved in   8 iterations
+nonlinear iteration   3 [current residual: 8.89e-11, initial residual: 1.03e-02, relative residual: 8.63e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000049.pvtu and results/projectedFields-0000049.pvtu 
+
+
+increment: 50
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 10 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 3.07e-06, initial residual: 1.03e-02, relative residual: 2.98e-04]
+linear system solved in   2 iterations
+nonlinear iteration   2 [current residual: 1.47e-08, initial residual: 1.03e-02, relative residual: 1.43e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000050.pvtu and results/projectedFields-0000050.pvtu 
+
+
+increment: 51
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 5.10e-06, initial residual: 1.03e-02, relative residual: 4.96e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 2.77e-09, initial residual: 1.03e-02, relative residual: 2.69e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000051.pvtu and results/projectedFields-0000051.pvtu 
+
+
+increment: 52
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 2.93e-07, initial residual: 1.03e-02, relative residual: 2.85e-05]
+linear system solved in   6 iterations
+nonlinear iteration   3 [current residual: 5.22e-11, initial residual: 1.03e-02, relative residual: 5.07e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000052.pvtu and results/projectedFields-0000052.pvtu 
+
+
+increment: 53
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 6.14e-07, initial residual: 1.03e-02, relative residual: 5.96e-05]
+
+Warning: solver did not converge in 12 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   3 [current residual: 1.63e-10, initial residual: 1.03e-02, relative residual: 1.59e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000053.pvtu and results/projectedFields-0000053.pvtu 
+
+
+increment: 54
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 5.11e-06, initial residual: 1.03e-02, relative residual: 4.96e-04]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 1.26e-08, initial residual: 1.03e-02, relative residual: 1.22e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000054.pvtu and results/projectedFields-0000054.pvtu 
+
+
+increment: 55
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   6 iterations
+nonlinear iteration   1 [current residual: 2.87e-06, initial residual: 1.03e-02, relative residual: 2.79e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 8.95e-10, initial residual: 1.03e-02, relative residual: 8.69e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000055.pvtu and results/projectedFields-0000055.pvtu 
+
+
+increment: 56
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 6.14e-07, initial residual: 1.03e-02, relative residual: 5.97e-05]
+
+Warning: solver did not converge in 10 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   3 [current residual: 9.77e-11, initial residual: 1.03e-02, relative residual: 9.49e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000056.pvtu and results/projectedFields-0000056.pvtu 
+
+
+increment: 57
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 3.50e-09, initial residual: 1.03e-02, relative residual: 3.40e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000057.pvtu and results/projectedFields-0000057.pvtu 
+
+
+increment: 58
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 3.38e-08, initial residual: 1.03e-02, relative residual: 3.29e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000058.pvtu and results/projectedFields-0000058.pvtu 
+
+
+increment: 59
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.17e-05, initial residual: 1.03e-02, relative residual: 1.14e-03]
+linear system solved in   5 iterations
+nonlinear iteration   2 [current residual: 2.45e-08, initial residual: 1.03e-02, relative residual: 2.38e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000059.pvtu and results/projectedFields-0000059.pvtu 
+
+
+increment: 60
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 80 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.40e-06, initial residual: 1.03e-02, relative residual: 2.33e-04]
+
+Warning: solver did not converge in 5 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 1.01e-10, initial residual: 1.03e-02, relative residual: 9.79e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000060.pvtu and results/projectedFields-0000060.pvtu 
+
+
+increment: 61
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 148 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.41e-06, initial residual: 1.03e-02, relative residual: 2.34e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 9.38e-11, initial residual: 1.03e-02, relative residual: 9.11e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000061.pvtu and results/projectedFields-0000061.pvtu 
+
+
+increment: 62
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.17e-05, initial residual: 1.03e-02, relative residual: 1.14e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 9.78e-08, initial residual: 1.03e-02, relative residual: 9.49e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000062.pvtu and results/projectedFields-0000062.pvtu 
+
+
+increment: 63
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in  24 iterations
+nonlinear iteration   1 [current residual: 2.44e-06, initial residual: 1.03e-02, relative residual: 2.36e-04]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 1.01e-10, initial residual: 1.03e-02, relative residual: 9.76e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000063.pvtu and results/projectedFields-0000063.pvtu 
+
+
+increment: 64
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 8.62e-09, initial residual: 1.03e-02, relative residual: 8.37e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000064.pvtu and results/projectedFields-0000064.pvtu 
+
+
+increment: 65
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.17e-05, initial residual: 1.03e-02, relative residual: 1.14e-03]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 5.61e-08, initial residual: 1.03e-02, relative residual: 5.45e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000065.pvtu and results/projectedFields-0000065.pvtu 
+
+
+increment: 66
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+
+Warning: solver did not converge in 10000 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 3.18e-06, initial residual: 1.03e-02, relative residual: 3.09e-04]
+linear system solved in   2 iterations
+nonlinear iteration   3 [current residual: 3.63e-08, initial residual: 1.03e-02, relative residual: 3.53e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000066.pvtu and results/projectedFields-0000066.pvtu 
+
+
+increment: 67
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 73 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.43e-06, initial residual: 1.03e-02, relative residual: 2.36e-04]
+
+Warning: solver did not converge in 15 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 4.53e-08, initial residual: 1.03e-02, relative residual: 4.40e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000067.pvtu and results/projectedFields-0000067.pvtu 
+
+
+increment: 68
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 8.62e-09, initial residual: 1.03e-02, relative residual: 8.37e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000068.pvtu and results/projectedFields-0000068.pvtu 
+
+
+increment: 69
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 5.15e-06, initial residual: 1.03e-02, relative residual: 5.00e-04]
+linear system solved in   2 iterations
+nonlinear iteration   2 [current residual: 7.79e-08, initial residual: 1.03e-02, relative residual: 7.56e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000069.pvtu and results/projectedFields-0000069.pvtu 
+
+
+increment: 70
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 2.00e-08, initial residual: 1.03e-02, relative residual: 1.94e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000070.pvtu and results/projectedFields-0000070.pvtu 
+
+
+increment: 71
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.17e-05, initial residual: 1.03e-02, relative residual: 1.14e-03]
+
+Warning: solver did not converge in 6 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 1.70e-08, initial residual: 1.03e-02, relative residual: 1.65e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000071.pvtu and results/projectedFields-0000071.pvtu 
+
+
+increment: 72
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.17e-05, initial residual: 1.03e-02, relative residual: 1.14e-03]
+linear system solved in   8 iterations
+nonlinear iteration   2 [current residual: 3.36e-09, initial residual: 1.03e-02, relative residual: 3.26e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000072.pvtu and results/projectedFields-0000072.pvtu 
+
+
+increment: 73
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in  31 iterations
+nonlinear iteration   1 [current residual: 2.43e-06, initial residual: 1.03e-02, relative residual: 2.36e-04]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 7.20e-11, initial residual: 1.03e-02, relative residual: 6.99e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000073.pvtu and results/projectedFields-0000073.pvtu 
+
+
+increment: 74
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 2.00e-08, initial residual: 1.03e-02, relative residual: 1.94e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000074.pvtu and results/projectedFields-0000074.pvtu 
+
+
+increment: 75
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 5.16e-06, initial residual: 1.03e-02, relative residual: 5.01e-04]
+
+Warning: solver did not converge in 7 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 4.57e-10, initial residual: 1.03e-02, relative residual: 4.43e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000075.pvtu and results/projectedFields-0000075.pvtu 
+
+
+increment: 76
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   8 iterations
+nonlinear iteration   2 [current residual: 1.20e-08, initial residual: 1.03e-02, relative residual: 1.17e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000076.pvtu and results/projectedFields-0000076.pvtu 
+
+
+increment: 77
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 3.58e-09, initial residual: 1.03e-02, relative residual: 3.47e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000077.pvtu and results/projectedFields-0000077.pvtu 
+
+
+increment: 78
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   5 iterations
+nonlinear iteration   2 [current residual: 7.51e-08, initial residual: 1.03e-02, relative residual: 7.29e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000078.pvtu and results/projectedFields-0000078.pvtu 
+
+
+increment: 79
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 66 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.47e-06, initial residual: 1.03e-02, relative residual: 2.40e-04]
+
+Warning: solver did not converge in 5 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 6.47e-11, initial residual: 1.03e-02, relative residual: 6.28e-09]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000079.pvtu and results/projectedFields-0000079.pvtu 
+
+
+increment: 80
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   5 iterations
+nonlinear iteration   1 [current residual: 5.17e-06, initial residual: 1.03e-02, relative residual: 5.02e-04]
+linear system solved in   8 iterations
+nonlinear iteration   2 [current residual: 4.99e-10, initial residual: 1.03e-02, relative residual: 4.84e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000080.pvtu and results/projectedFields-0000080.pvtu 
+
+
+increment: 81
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 3.38e-08, initial residual: 1.03e-02, relative residual: 3.28e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000081.pvtu and results/projectedFields-0000081.pvtu 
+
+
+increment: 82
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.14e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   4 iterations
+nonlinear iteration   2 [current residual: 2.93e-07, initial residual: 1.03e-02, relative residual: 2.85e-05]
+linear system solved in   2 iterations
+nonlinear iteration   3 [current residual: 2.68e-09, initial residual: 1.03e-02, relative residual: 2.61e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000082.pvtu and results/projectedFields-0000082.pvtu 
+
+
+increment: 83
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   8 iterations
+nonlinear iteration   1 [current residual: 2.15e-06, initial residual: 1.03e-02, relative residual: 2.09e-04]
+
+Warning: solver did not converge in 19 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 5.20e-08, initial residual: 1.03e-02, relative residual: 5.05e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000083.pvtu and results/projectedFields-0000083.pvtu 
+
+
+increment: 84
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 7 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   1 [current residual: 2.76e-06, initial residual: 1.03e-02, relative residual: 2.68e-04]
+linear system solved in   6 iterations
+nonlinear iteration   2 [current residual: 4.98e-10, initial residual: 1.03e-02, relative residual: 4.84e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000084.pvtu and results/projectedFields-0000084.pvtu 
+
+
+increment: 85
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in  16 iterations
+nonlinear iteration   1 [current residual: 2.40e-06, initial residual: 1.03e-02, relative residual: 2.33e-04]
+
+Warning: solver did not converge in 10000 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 6.08e-08, initial residual: 1.03e-02, relative residual: 5.90e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000085.pvtu and results/projectedFields-0000085.pvtu 
+
+
+increment: 86
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 2.00e-08, initial residual: 1.03e-02, relative residual: 1.94e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000086.pvtu and results/projectedFields-0000086.pvtu 
+
+
+increment: 87
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+
+Warning: solver did not converge in 13 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 2.91e-08, initial residual: 1.03e-02, relative residual: 2.82e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000087.pvtu and results/projectedFields-0000087.pvtu 
+
+
+increment: 88
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   3 iterations
+nonlinear iteration   1 [current residual: 2.57e-05, initial residual: 1.03e-02, relative residual: 2.49e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 2.00e-08, initial residual: 1.03e-02, relative residual: 1.94e-06]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000088.pvtu and results/projectedFields-0000088.pvtu 
+
+
+increment: 89
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   4 iterations
+nonlinear iteration   1 [current residual: 1.18e-05, initial residual: 1.03e-02, relative residual: 1.14e-03]
+linear system solved in  17 iterations
+nonlinear iteration   2 [current residual: 4.09e-09, initial residual: 1.03e-02, relative residual: 3.97e-07]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000089.pvtu and results/projectedFields-0000089.pvtu 
+
+
+increment: 90
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in   2 iterations
+nonlinear iteration   1 [current residual: 7.13e-05, initial residual: 1.03e-02, relative residual: 6.93e-03]
+linear system solved in   3 iterations
+nonlinear iteration   2 [current residual: 6.15e-07, initial residual: 1.03e-02, relative residual: 5.97e-05]
+linear system solved in   6 iterations
+nonlinear iteration   3 [current residual: 1.89e-10, initial residual: 1.03e-02, relative residual: 1.83e-08]
+nonlinear iterations converged in absolute norm
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000090.pvtu and results/projectedFields-0000090.pvtu 
+
+
+increment: 91
+nonlinear iteration   0 [current residual: 1.03e-02, initial residual: 1.03e-02, relative residual: 1.00e+00]
+linear system solved in  29 iterations
+nonlinear iteration   1 [current residual: 2.48e-06, initial residual: 1.03e-02, relative residual: 2.41e-04]
+
+Warning: solver did not converge in 72 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   2 [current residual: 7.97e+07, initial residual: 7.97e+07, relative residual: 1.00e+00]
+
+Warning: solver did not converge in 3 iterations as per set tolerances. consider increasing maxSolverIterations or decreasing relSolverTolerance.
+nonlinear iteration   3 [current residual: 1.12e+10, initial residual: 1.12e+10, relative residual: 1.00e+00]
+linear system solved in   0 iterations
+Non-linear iterations did not converge in maxNonLinearIterations
+Continuing
+writing orientations data to file
+projecting post processing fields
+output written to: results/solution-0000091.pvtu and results/projectedFields-0000091.pvtu 
+
+
+increment: 92
+
+
++---------------------------------------------+------------+------------+
+| Total wallclock time elapsed since start    |      17.3s |            |
+|                                             |            |            |
+| Section                         | no. calls |  wall time | % of total |
++---------------------------------+-----------+------------+------------+
+| assembly                        |       307 |      1.68s |       9.7% |
+| mesh and initialization         |         1 |    0.0063s |         0% |
+| postprocess                     |        92 |    0.0959s |      0.55% |
+| solve                           |       217 |      14.4s |        83% |
++---------------------------------+-----------+------------+------------+
+

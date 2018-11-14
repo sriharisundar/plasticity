@@ -85,6 +85,10 @@ void ellipticBVP<dim>::init(){
     if(userInputs.enableCyclicLoading){
         deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]=deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]*remainIncrements*userInputs.delT/userInputs.quarterCycleTime;
       }
+
+    if(userInputs.useVelocityGrad){
+      
+    }
   }
 
   //apply initial conditions
