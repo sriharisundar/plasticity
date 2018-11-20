@@ -104,6 +104,10 @@ void ellipticBVP<dim>::setBoundaryValues(const Point<dim>& node, const unsigned 
               flag=true; value=deluConstraint[i][dof];return;}
       }
   }
+
+  if(userInputs.useVelocityGrad){
+    
+  }
 }
 
 //methods to apply dirichlet BC's
@@ -119,7 +123,7 @@ void ellipticBVP<dim>::applyDirichletBCs(){
   F = 0.0;
   invert(IdentityMatrix(dim)-targetVelGrad).mmult(F,Fprev);
   deltaF=F-Fprev;
-  
+
   //parallel loop over all elements
   typename DoFHandler<dim>::active_cell_iterator cell = dofHandler.begin_active(), endc = dofHandler.end();
   for (; cell!=endc; ++cell) {
