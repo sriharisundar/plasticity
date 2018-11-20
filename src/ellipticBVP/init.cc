@@ -87,7 +87,11 @@ void ellipticBVP<dim>::init(){
       }
 
     if(userInputs.useVelocityGrad){
-      
+      for (i=0; i<3; i++){
+      	std::getline (BCfile,line);
+      	std::stringstream ss(line);
+        ss>>targetVelGrad[i][0]>>targetVelGrad[i][1]>>targetVelGrad[i][2];
+      }
     }
   }
 
