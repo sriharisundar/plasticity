@@ -1,36 +1,52 @@
 #include "../../../include/crystalPlasticity.h"
 
-
 template <int dim>
 void crystalPlasticity<dim>::calculatePlasticity(unsigned int cellID,
                                                  unsigned int quadPtID)
 {
+  FullMatrix<double> FE_t(dim,dim),FP_t(dim,dim);  //Elastic and Plastic deformation gradient
+  Vector<double> s_alpha_t(n_slip_systems); // Slip resistance
+  Vector<double> rot1(dim);// Crystal orientation (Rodrigues representation)
 
-    F_tau=F; // Deformation Gradient
-    FullMatrix<double> FE_t(dim,dim),FP_t(dim,dim);  //Elastic and Plastic deformation gradient
-    Vector<double> s_alpha_t(n_slip_systems); // Slip resistance
-    Vector<double> rot1(dim);// Crystal orientation (Rodrigues representation)
+  // Tolerance
 
-    // Tolerance
+  double tol1=this->userInputs.modelStressTolerance;
 
-    double tol1=this->userInputs.modelStressTolerance;
+  std::cout.precision(16);
 
-
-
-    std::cout.precision(16);
-
-    FE_t=Fe_conv[cellID][quadPtID];
-    FP_t=Fp_conv[cellID][quadPtID];
-    s_alpha_t=s_alpha_conv[cellID][quadPtID];
-    rot1=rot[cellID][quadPtID];
+  // Rotation matrix of the crystal orientation
+  FullMatrix<double> rotmat(dim,dim);
+  rotmat=0.0;
+  odfpoint(rotmat,rot1);
 
 
+  std::string testinput = "constitutiveInput.txt"
+  // Read boundary conditions
+  std::ifstream constitutiveInput(testinput);
+  //read data
 
-    // Rotation matrix of the crystal orientation
-    FullMatrix<double> rotmat(dim,dim);
-    rotmat=0.0;
-    odfpoint(rotmat,rot1);
-
+  if (constitutiveInput.is_open()){
+    pcout << "Reading boundary conditions\n";
+    //skip header lines
+      std::getline (constitutiveInput,line);
+      std::stringstream ss(line);
+      ss>>s_alpha_t[0]>>s_alpha_t[1]>>s_alpha_t[2]>>s_alpha_t[3]>>s_alpha_t[4]>>s_alpha_t[5]>>s_alpha_t[6]>>s_alpha_t[7]>>s_alpha_t[8]>>s_alpha_t[9]>>s_alpha_t[10]>>s_alpha_t[11];
+      for(int i=0;i<3;i++){
+        std::getline (constitutiveInput,line);
+        std::stringstream ss(line);
+        ss>>F_tau[i][0]>>F_tau[i][1]>>F_tau[i][2];
+      }
+      for(int i=0;i<3;i++){
+        std::getline (constitutiveInput,line);
+        std::stringstream ss(line);
+        ss>>FP_t[i][0]>>FP_t[i][1]>>FP_t[i][2];
+      }
+      for(int i=0;i<3;i++){
+        std::getline (constitutiveInput,line);
+        std::stringstream ss(line);
+        ss>>FE_t[i][0]>>FE_t[i][1]>>FE_t[i][2];
+      }
+    }
 
     FullMatrix<double> temp(dim,dim),temp1(dim,dim),temp2(dim,dim),temp3(dim,dim),temp4(dim,dim),temp5(dim,dim),temp6(dim,dim); // Temporary matrices
     FullMatrix<double> T_tau(dim,dim),P_tau(dim,dim);
