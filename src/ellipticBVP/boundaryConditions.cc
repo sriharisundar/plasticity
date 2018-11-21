@@ -116,10 +116,10 @@ void ellipticBVP<dim>::applyDirichletBCs(){
   FEValues<dim> fe_values (FE, QGauss<dim>(1), update_values);
   FEFaceValues<dim> fe_face_values (FE, QGauss<dim-1>(1), update_values);
 
-  F = 0.0;
-  invert(IdentityMatrix(dim)-targetVelGrad).mmult(F,Fprev);
-  deltaF=F-Fprev;
-  
+//  F = 0.0;
+//  invert(IdentityMatrix(dim)-targetVelGrad).mmult(F,Fprev);
+//  deltaF=F-Fprev;
+
   //parallel loop over all elements
   typename DoFHandler<dim>::active_cell_iterator cell = dofHandler.begin_active(), endc = dofHandler.end();
   for (; cell!=endc; ++cell) {

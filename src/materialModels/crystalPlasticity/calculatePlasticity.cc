@@ -7,26 +7,25 @@ void crystalPlasticity<dim>::calculatePlasticity(unsigned int cellID,
   FullMatrix<double> FE_t(dim,dim),FP_t(dim,dim);  //Elastic and Plastic deformation gradient
   Vector<double> s_alpha_t(n_slip_systems); // Slip resistance
   Vector<double> rot1(dim);// Crystal orientation (Rodrigues representation)
-
+  std::string line;
   // Tolerance
+
+  QGauss<dim> quadrature(this->userInputs.quadOrder);
+  const unsigned int num_quad_points = quadrature.size();
+
+  init(num_quad_points);
 
   double tol1=this->userInputs.modelStressTolerance;
 
   std::cout.precision(16);
 
-  // Rotation matrix of the crystal orientation
-  FullMatrix<double> rotmat(dim,dim);
-  rotmat=0.0;
-  odfpoint(rotmat,rot1);
+  std::string testinput = "constitutiveInput.txt";
 
-
-  std::string testinput = "constitutiveInput.txt"
   // Read boundary conditions
   std::ifstream constitutiveInput(testinput);
   //read data
 
   if (constitutiveInput.is_open()){
-    pcout << "Reading boundary conditions\n";
     //skip header lines
       std::getline (constitutiveInput,line);
       std::stringstream ss(line);
@@ -48,6 +47,16 @@ void crystalPlasticity<dim>::calculatePlasticity(unsigned int cellID,
       }
     }
 
+    rot1[0]=0;
+    rot1[1]=0;
+    rot1[2]=0;
+    // Rotation matrix of the crystal orientation
+    FullMatrix<double> rotmat(dim,dim);
+    rotmat=0.0;
+    odfpoint(rotmat,rot1);
+
+    std::cout<<"Here"<<std::endl;
+
     FullMatrix<double> temp(dim,dim),temp1(dim,dim),temp2(dim,dim),temp3(dim,dim),temp4(dim,dim),temp5(dim,dim),temp6(dim,dim); // Temporary matrices
     FullMatrix<double> T_tau(dim,dim),P_tau(dim,dim);
     FullMatrix<double> Fpn_inv(dim,dim),FE_tau_trial(dim,dim),F_trial(dim,dim),CE_tau_trial(dim,dim),FP_t2(dim,dim),Ee_tau_trial(dim,dim);
@@ -64,6 +73,7 @@ void crystalPlasticity<dim>::calculatePlasticity(unsigned int cellID,
 	for (unsigned int i = 0;i<6;i++) {
 		for (unsigned int j = 0;j<6;j++) {
 			elasticStiffnessMatrix[i][j] = this->userInputs.elasticStiffness[i][j];
+      //std::cout<<elasticStiffnessMatrix[i][j]<<std::endl;
 		}
 	}
 
@@ -472,12 +482,12 @@ void crystalPlasticity<dim>::calculatePlasticity(unsigned int cellID,
   P_tau.equ(det_F_tau, P_tau);
 
          for (unsigned int i=0;i<this->userInputs.numTwinSystems;i++){
-            twinfraction_iter[cellID][quadPtID][i]=twinfraction_conv[cellID][quadPtID][i]+x_beta_old[i+this->userInputs.numSlipSystems]/this->userInputs.twinShear;
-            twinfraction_iter_Twin[cellID][quadPtID][i] = twinfraction_conv_Twin[cellID][quadPtID][i] + x_beta_old[i + this->userInputs.numSlipSystems] / this->userInputs.twinShear;
+//            twinfraction_iter[cellID][quadPtID][i]=twinfraction_conv[cellID][quadPtID][i]+x_beta_old[i+this->userInputs.numSlipSystems]/this->userInputs.twinShear;
+//            twinfraction_iter_Twin[cellID][quadPtID][i] = twinfraction_conv_Twin[cellID][quadPtID][i] + x_beta_old[i + this->userInputs.numSlipSystems] / this->userInputs.twinShear;
 }
 
         for (unsigned int i=0;i<this->userInputs.numSlipSystems;i++){
-            slipfraction_iter[cellID][quadPtID][i]=slipfraction_conv[cellID][quadPtID][i]+x_beta_old[i];
+//            slipfraction_iter[cellID][quadPtID][i]=slipfraction_conv[cellID][quadPtID][i]+x_beta_old[i];
         }
 
 		n_PA = 0;
@@ -786,10 +796,14 @@ void crystalPlasticity<dim>::calculatePlasticity(unsigned int cellID,
     sres_tau.reinit(n_slip_systems);
     sres_tau = s_alpha_tau;
 
+
     // Update the history variables
-    Fe_iter[cellID][quadPtID]=FE_tau;
-    Fp_iter[cellID][quadPtID]=FP_tau;
-    s_alpha_iter[cellID][quadPtID]=sres_tau;
+//    Fe_iter[cellID][quadPtID]=FE_tau;
+//    Fp_iter[cellID][quadPtID]=FP_tau;
+//    s_alpha_iter[cellID][quadPtID]=sres_tau;
+for(int i=0;i<3;i++){
+  std::cout<<FE_tau[i][0]<<" "<<FE_tau[i][1]<<" "<<FE_tau[i][2]<<std::endl;
+}
 
 
 }

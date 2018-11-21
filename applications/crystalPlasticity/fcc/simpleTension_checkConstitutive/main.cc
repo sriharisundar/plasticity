@@ -13,24 +13,29 @@ int main (int argc, char **argv)
   Utilities::MPI::MPI_InitFinalize mpi_initialization(argc, argv, 1);
   try
     {
-      deallog.depth_console(0);
+      //deallog.depth_console(0);
 
       ParameterHandler parameter_handler;
 
       std::list<std::string> args;
       for (int i=1; i<argc; ++i) args.push_back (argv[i]);
 
-      if (args.size() == 0){
-        std::cerr<<"Provide name of a parameter file."<<std::endl;
-        exit (1);
-      }
+      //if (args.size() == 0){
+        //std::cerr<<"Provide name of a parameter file."<<std::endl;
+        //exit (1);
+      //}
 
-      const std::string parameter_file = args.front ();
-      userInputParameters userInputs(parameter_file,parameter_handler);
+      //const std::string parameter_file = args.front ();
+      userInputParameters userInputs("prm.in",parameter_handler);
 
       crystalPlasticity<3> problem(userInputs);
-
-      problem.calculatePlasticity(1,1)
+      problem.orientations.loadOrientations(userInputs.grainIDFile,
+              userInputs.headerLinesGrainIDFile,
+              userInputs.grainOrientationsFile,
+              userInputs.numPts,
+              userInputs.span);
+      problem.orientations.loadOrientationVector(userInputs.grainOrientationsFile);
+      problem.calculatePlasticity(0,0);
     }
   catch (std::exception &exc)
     {

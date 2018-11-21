@@ -66,6 +66,11 @@ public:
 
     //orientation maps
     crystalOrientationsIO<dim> orientations;
+
+    void calculatePlasticity(unsigned int cellID,
+                             unsigned int quadPtID);
+
+
 private:
 
     void init(unsigned int num_quad_points);
@@ -77,9 +82,6 @@ private:
      * iteration and the elastic and plastic deformation gradient of the previous time step to
      *calculate the stress and tangent modulus
      */
-
-    void calculatePlasticity(unsigned int cellID,
-                             unsigned int quadPtID);
 
     void getElementalValues(FEValues<dim>& fe_values,
                             unsigned int dofs_per_cell,

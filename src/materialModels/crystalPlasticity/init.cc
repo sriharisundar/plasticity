@@ -7,7 +7,7 @@ void crystalPlasticity<dim>::init(unsigned int num_quad_points)
 {
 
     //call loadOrientations to load material orientations
-    loadOrientations();
+    //loadOrientations();
 
     local_strain.reinit(dim,dim);
     local_stress.reinit(dim,dim);
@@ -189,15 +189,15 @@ void crystalPlasticity<dim>::init(unsigned int num_quad_points)
     twin.resize(num_local_cells,std::vector<double>(num_quad_points,0.0));
 
     //load rot and rotnew
-    for (unsigned int cell=0; cell<num_local_cells; cell++){
-      unsigned int materialID=cellOrientationMap[cell];
-        for (unsigned int q=0; q<num_quad_points; q++){
-            for (unsigned int i=0; i<dim; i++){
-                rot[cell][q][i]=orientations.eulerAngles[materialID][i];
-                rotnew[cell][q][i]=orientations.eulerAngles[materialID][i];
-            }
-        }
-    }
+    //for (unsigned int cell=0; cell<num_local_cells; cell++){
+      //unsigned int materialID=cellOrientationMap[cell];
+        //for (unsigned int q=0; q<num_quad_points; q++){
+            //for (unsigned int i=0; i<dim; i++){
+                //rot[cell][q][i]=orientations.eulerAngles[materialID][i];
+                //rotnew[cell][q][i]=orientations.eulerAngles[materialID][i];
+            //}
+        //}
+    //}
     N_qpts=num_quad_points;
     initCalled=true;
 
