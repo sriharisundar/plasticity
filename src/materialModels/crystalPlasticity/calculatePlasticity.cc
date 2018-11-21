@@ -805,6 +805,9 @@ for(int i=0;i<3;i++){
   std::cout<<FE_tau[i][0]<<" "<<FE_tau[i][1]<<" "<<FE_tau[i][2]<<std::endl;
 }
 
+for(int i=0;i<3;i++){
+  std::cout<<P_tau[i][0]<<" "<<P_tau[i][1]<<" "<<P_tau[i][2]<<std::endl;
+}
 
 }
 
