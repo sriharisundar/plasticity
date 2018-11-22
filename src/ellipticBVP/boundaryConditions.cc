@@ -106,7 +106,9 @@ void ellipticBVP<dim>::setBoundaryValues(const Point<dim>& node, const unsigned 
   }
 
   if(userInputs.useVelocityGrad){
-    
+    value = 0;
+    for(i=0;i<dim;i++)
+      value+=deltaF[dof][i]*node[i];
   }
 }
 
@@ -119,10 +121,16 @@ void ellipticBVP<dim>::applyDirichletBCs(){
   std::vector<types::global_dof_index> local_dof_indices (dofs_per_cell);
   FEValues<dim> fe_values (FE, QGauss<dim>(1), update_values);
   FEFaceValues<dim> fe_face_values (FE, QGauss<dim-1>(1), update_values);
+  FullMatrix<double> indentity;
+
+  iMinusL.init(IdentityMatrix(dim))
 
   F = 0.0;
-  invert(IdentityMatrix(dim)-targetVelGrad).mmult(F,Fprev);
-  deltaF=F-Fprev;
+
+  invert(iMinusL.add(-1,targetVelGrad)).mmult(F,Fprev);
+  deltaF=F;
+  deltaF.add(-1,Fprev);
+  Fprev=F;
 
   //parallel loop over all elements
   typename DoFHandler<dim>::active_cell_iterator cell = dofHandler.begin_active(), endc = dofHandler.end();
