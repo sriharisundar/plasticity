@@ -121,13 +121,13 @@ void ellipticBVP<dim>::applyDirichletBCs(){
   std::vector<types::global_dof_index> local_dof_indices (dofs_per_cell);
   FEValues<dim> fe_values (FE, QGauss<dim>(1), update_values);
   FEFaceValues<dim> fe_face_values (FE, QGauss<dim-1>(1), update_values);
-  FullMatrix<double> indentity;
+  FullMatrix<double> iMinusL;
 
-  iMinusL.init(IdentityMatrix(dim))
+  iMinusL.reinit(IdentityMatrix(dim))
 
   F = 0.0;
-
-  invert(iMinusL.add(-1,targetVelGrad)).mmult(F,Fprev);
+  iMinusL.add(-1,targetVelGrad);
+  invert(iMinusL).mmult(F,Fprev);
   deltaF=F;
   deltaF.add(-1,Fprev);
   Fprev=F;
