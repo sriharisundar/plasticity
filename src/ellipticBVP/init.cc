@@ -71,21 +71,27 @@ void ellipticBVP<dim>::init(){
 
   if (BCfile.is_open()){
     pcout << "Reading boundary conditions\n";
+
     //skip header lines
-    for (i=0; i<userInputs.BCheaderLines; i++) std::getline (BCfile,line);
-    for (i=0; i<userInputs.NumberofBCs; i++){
-    	std::getline (BCfile,line);
-    	std::stringstream ss(line);
-      ss>>faceID>>dof;
-      faceDOFConstrained[faceID-1][dof-1]=true;
-      ss>>totalU;
-      deluConstraint[faceID-1][dof-1]=totalU/remainIncrements;
+    for (i=0; i<userInputs.BCheaderLines; i++) {
+      std::getline (BCfile,line);
     }
+
+    if(!userInputs.useVelocityGrad)
+      for (i=0; i<userInputs.NumberofBCs; i++){
+      	std::getline (BCfile,line);
+      	std::stringstream ss(line);
+        ss>>faceID>>dof;
+        faceDOFConstrained[faceID-1][dof-1]=true;
+        ss>>totalU;
+        deluConstraint[faceID-1][dof-1]=totalU/remainIncrements;
+      }
 
     if(userInputs.enableCyclicLoading){
         deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]=deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]*remainIncrements*userInputs.delT/userInputs.quarterCycleTime;
       }
 
+    std::cout<<userInputs.useVelocityGrad<<std::endl;
     if(userInputs.useVelocityGrad){
       for (i=0; i<3; i++){
       	std::getline (BCfile,line);
@@ -94,7 +100,9 @@ void ellipticBVP<dim>::init(){
       }
     }
   }
+  targetVelGrad*=userInputs.LmultFactor;
 
+  Fprev=IdentityMatrix(dim);
   //apply initial conditions
   applyInitialConditions();
   solutionWithGhosts=solution;

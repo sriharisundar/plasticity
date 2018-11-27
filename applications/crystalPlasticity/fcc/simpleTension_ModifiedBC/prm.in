@@ -38,7 +38,7 @@ set Subdivisions Y                               = 1
 set Subdivisions Z                               = 1
 
 # The number of initial refinements of the coarse mesh.
-set Refine factor                                = 3
+set Refine factor                                = 0
 
 # Only written for serial runs and if number of elements < 10000
 set Write Mesh To EPS                            = false
@@ -54,7 +54,7 @@ set Write Output                                 = true
 set Output Directory                             = results
 
 # Skip Output Steps
-set Skip Output Steps                            = 1000
+set Skip Output Steps                            = 0
 
 # Output Equivalent strain
 set Output Equivalent strain                     = true
@@ -80,6 +80,10 @@ set BC file number of header lines               = 2
 #Number of boundary conditions
 set Number of boundary conditions                = 4
 
+set Use velocity gradient BC                     = true
+
+set Velgrad multiplication factor                = 0.01
+
 ####################################
 # Solver parameters
 ####################################
@@ -90,28 +94,28 @@ set Initial time increments                      = 0.01
 set Reduce time increment                        = true
 
 #Number of the times delT can be reduced before quitting simulation
-set Maximum number of time reductions            = 4
+set Maximum number of time reductions            = 2
 
 #Amount of reduction in the time increment
 set Time reduction factor                        = 0.1
 
 #Total simulation time
-set Total time                                   = 100
+set Total time                                   = 1
 
 # Maximum iterations for linear solver
 set Maximum linear solver iterations             = 50000
 
 # Relative linear solver tolerance
-set Relative linear solver tolerance             = 1.0e-7
+set Relative linear solver tolerance             = 1.0e-6
 
 # Maximum no. of non-linear iterations
 set Maximum non linear iterations                = 4
 
 # Non-linear solver tolerance
-set Absolute nonLinear solver tolerance          = 1.0e-4
+set Absolute nonLinear solver tolerance          = 1.0e-7
 
 # Relative non-linear solver toleranc
-set Relative nonLinear solver tolerance          = 1.0e-4
+set Relative nonLinear solver tolerance          = 1.0e-7
 
 ####################################
 # Elasticity parameters

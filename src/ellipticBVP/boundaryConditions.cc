@@ -70,67 +70,62 @@ void ellipticBVP<dim>::setBoundaryValues(const Point<dim>& node, const unsigned 
     }
   }
 
-  for (i=0;i<2*dim;i++){
-    if(faceDOFConstrained[i][dof])
-      switch (i+1){
-        case 1:
-        if (node[0] == 0.0)
-            {//pcout<<i<<" "<<dof<<std::endl;
-              flag=true; value=deluConstraint[i][dof];return;}
-        break;
-        case 2:
-        if (node[0] == userInputs.span[0])
-            {//pcout<<i<<" "<<dof<<std::endl;
-              flag=true; value=deluConstraint[i][dof];return;}
-        break;
-        case 3:
-        if (node[1] == 0.0)
-            {//pcout<<i<<" "<<dof<<std::endl;
-              flag=true; value=deluConstraint[i][dof];return;}
-        break;
-        case 4:
-        if (node[1] == userInputs.span[1])
-            {//pcout<<i<<" "<<dof<<std::endl;
-              flag=true; value=deluConstraint[i][dof];return;}
-        break;
-        case 5:
-        if (node[2] == 0.0)
-            {//pcout<<i<<" "<<dof<<std::endl;
-              flag=true; value=deluConstraint[i][dof];return;}
-        break;
-        case 6:
-        if (node[2] == userInputs.span[2])
-            {//pcout<<i<<" "<<dof<<std::endl;
-              flag=true; value=deluConstraint[i][dof];return;}
-      }
+  if(!userInputs.useVelocityGrad){
+    for (i=0;i<2*dim;i++){
+      if(faceDOFConstrained[i][dof])
+        switch (i+1){
+          case 1:
+          if (node[0] == 0.0)
+              {//pcout<<i<<" "<<dof<<std::endl;
+                flag=true; value=deluConstraint[i][dof];return;}
+          break;
+          case 2:
+          if (node[0] == userInputs.span[0])
+              {//pcout<<i<<" "<<dof<<std::endl;
+                flag=true; value=deluConstraint[i][dof];return;}
+          break;
+          case 3:
+          if (node[1] == 0.0)
+              {//pcout<<i<<" "<<dof<<std::endl;
+                flag=true; value=deluConstraint[i][dof];return;}
+          break;
+          case 4:
+          if (node[1] == userInputs.span[1])
+              {//pcout<<i<<" "<<dof<<std::endl;
+                flag=true; value=deluConstraint[i][dof];return;}
+          break;
+          case 5:
+          if (node[2] == 0.0)
+              {//pcout<<i<<" "<<dof<<std::endl;
+                flag=true; value=deluConstraint[i][dof];return;}
+          break;
+          case 6:
+          if (node[2] == userInputs.span[2])
+              {//pcout<<i<<" "<<dof<<std::endl;
+                flag=true; value=deluConstraint[i][dof];return;}
+        }
+    }
   }
 
   if(userInputs.useVelocityGrad){
     value = 0;
     for(i=0;i<dim;i++)
       value+=deltaF[dof][i]*node[i];
+    flag=true;
+    return;
   }
+
 }
 
 //methods to apply dirichlet BC's
 template <int dim>
 void ellipticBVP<dim>::applyDirichletBCs(){
   constraints.clear();
-
   const unsigned int   dofs_per_cell   = FE.dofs_per_cell;
+  unsigned int i,j=0;
   std::vector<types::global_dof_index> local_dof_indices (dofs_per_cell);
   FEValues<dim> fe_values (FE, QGauss<dim>(1), update_values);
   FEFaceValues<dim> fe_face_values (FE, QGauss<dim-1>(1), update_values);
-  FullMatrix<double> iMinusL;
-
-  iMinusL.reinit(IdentityMatrix(dim))
-
-  F = 0.0;
-  iMinusL.add(-1,targetVelGrad);
-  invert(iMinusL).mmult(F,Fprev);
-  deltaF=F;
-  deltaF.add(-1,Fprev);
-  Fprev=F;
 
   //parallel loop over all elements
   typename DoFHandler<dim>::active_cell_iterator cell = dofHandler.begin_active(), endc = dofHandler.end();
@@ -141,7 +136,7 @@ void ellipticBVP<dim>::applyDirichletBCs(){
       for (unsigned int faceID=0; faceID<2*dim; faceID++){
 	if (cell->face(faceID)->at_boundary()){
 	  fe_face_values.reinit (cell, faceID);
-	  for (unsigned int i=0; i<dofs_per_cell; ++i) {
+	  for (i=0; i<dofs_per_cell; ++i) {
 	    if (fe_face_values.shape_value(i, 0)!=0){
 	      const unsigned int dof = fe_values.get_fe().system_to_component_index(i).first;
 	      unsigned int globalDOF=local_dof_indices[i];
@@ -150,6 +145,8 @@ void ellipticBVP<dim>::applyDirichletBCs(){
 	      Point<dim> node=supportPoints[globalDOF];
 	      setBoundaryValues(node, dof, flag, value);
 	      if (flag){
+          std::cout<<node<<" "<<dof<<" ";
+          std::cout<<value<<std::endl;
 		constraints.add_line (globalDOF);
 		if (currentIteration==0){
 		  value*=loadFactorSetByModel;
