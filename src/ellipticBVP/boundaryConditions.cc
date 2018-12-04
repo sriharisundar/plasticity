@@ -145,8 +145,8 @@ void ellipticBVP<dim>::applyDirichletBCs(){
 	      Point<dim> node=supportPoints[globalDOF];
 	      setBoundaryValues(node, dof, flag, value);
 	      if (flag){
-          std::cout<<node<<" "<<dof<<" ";
-          std::cout<<value<<std::endl;
+          //std::cout<<node<<" "<<dof<<" ";
+          //std::cout<<value<<std::endl;
 		constraints.add_line (globalDOF);
 		if (currentIteration==0){
 		  value*=loadFactorSetByModel;

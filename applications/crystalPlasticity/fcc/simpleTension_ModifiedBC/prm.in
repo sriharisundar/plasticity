@@ -38,7 +38,7 @@ set Subdivisions Y                               = 1
 set Subdivisions Z                               = 1
 
 # The number of initial refinements of the coarse mesh.
-set Refine factor                                = 0
+set Refine factor                                = 2
 
 # Only written for serial runs and if number of elements < 10000
 set Write Mesh To EPS                            = false
@@ -91,7 +91,7 @@ set Velgrad multiplication factor                = 0.01
 set Initial time increments                      = 0.01
 
 #Flag to indicate if time increment can be reduced
-set Reduce time increment                        = true
+set Reduce time increment                        = false
 
 #Number of the times delT can be reduced before quitting simulation
 set Maximum number of time reductions            = 2
