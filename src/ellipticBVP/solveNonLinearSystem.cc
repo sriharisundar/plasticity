@@ -17,6 +17,7 @@ bool ellipticBVP<dim>::solveNonLinearSystem(){
     //Calling assemble
     computing_timer.enter_section("assembly");
     assemble();
+    //std::cin >> buffer;
     computing_timer.exit_section("assembly");
 
     if (!resetIncrement){

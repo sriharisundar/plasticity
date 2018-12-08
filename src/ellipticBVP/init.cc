@@ -91,7 +91,6 @@ void ellipticBVP<dim>::init(){
         deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]=deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]*remainIncrements*userInputs.delT/userInputs.quarterCycleTime;
       }
 
-    std::cout<<userInputs.useVelocityGrad<<std::endl;
     if(userInputs.useVelocityGrad){
       for (i=0; i<3; i++){
       	std::getline (BCfile,line);
