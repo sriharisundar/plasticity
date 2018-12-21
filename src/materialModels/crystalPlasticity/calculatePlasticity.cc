@@ -746,15 +746,7 @@ void crystalPlasticity<dim>::calculatePlasticity(unsigned int cellID,
 				for (unsigned int n = 0;n<dim;n++) {
 					for (unsigned int o = 0;o<dim;o++) {
 						for (unsigned int p = 0;p<dim;p++) {
-							for (unsigned int i = 0;i<dim;i++) {
-								for (unsigned int j = 0;j<dim;j++) {
-									for (unsigned int k = 0;k<dim;k++) {
-										for (unsigned int l = 0;l<dim;l++) {
-											dP_dF[m][n][o][p] = dP_dF[m][n][o][p] + PK1_Stiff(dim*i + j, dim*k + l)*L(i, m)*L(j, n)*L(k, o)*L(l, p);;
-										}
-									}
-								}
-							}
+								dP_dF[m][n][o][p] = PK1_Stiff(dim*m + n, dim*o + p);
 						}
 					}
 				}

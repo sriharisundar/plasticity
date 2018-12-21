@@ -7,7 +7,7 @@ void ellipticBVP<dim>::solveLinearSystem(ConstraintMatrix& constraintmatrix, mat
 
   vectorType completely_distributed_solutionInc (locally_owned_dofs, mpi_communicator);
   SolverControl solver_control(userInputs.maxLinearSolverIterations, userInputs.relLinearSolverTolerance*b.l2_norm());
-  PETScWrappers::SolverCGS solver(solver_control, mpi_communicator);
+  PETScWrappers::SolverGMRES solver(solver_control, mpi_communicator);
   PETScWrappers::PreconditionJacobi preconditioner(A);
 
   //solve Ax=b
@@ -27,6 +27,7 @@ void ellipticBVP<dim>::solveLinearSystem(ConstraintMatrix& constraintmatrix, mat
   constraintmatrix.distribute (completely_distributed_solutionInc);
   dxGhosts=completely_distributed_solutionInc;
   x+=completely_distributed_solutionInc;
+  //x.print(std::cout,10,6);
   xGhosts=x;
 }
 
