@@ -113,7 +113,9 @@ void crystalPlasticity<dim>::updateAfterIncrement()
   local_F_s=0.0;
 
   char buffer[200];
-  //copy rotnew to output
+        if (this->currentIncrement%this->userInputs.skipOutputSteps==0)
+        if (this->userInputs.writeOutput) {
+//copy rotnew to output
   orientations.outputOrientations.clear();
   //loop over elements
   cellID=0;
@@ -151,7 +153,7 @@ void crystalPlasticity<dim>::updateAfterIncrement()
     }
   }
   orientations.writeOutputOrientations(this->userInputs.writeOutput,this->userInputs.outputDirectory);
-
+}
   //Update the history variables when convergence is reached for the current increment
   Fe_conv=Fe_iter;
   Fp_conv=Fp_iter;

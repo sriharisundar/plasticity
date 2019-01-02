@@ -5,7 +5,7 @@
 template <int dim>
 void ellipticBVP<dim>::solve(){
   pcout << "begin solve...\n\n";
-
+  pcout<< currentT<<" "<<totalT<<"\n";
   //load increments
   unsigned int successiveIncs=0;
 
@@ -26,7 +26,9 @@ void ellipticBVP<dim>::solve(){
 
       //call updateAfterIncrement, if any
       if (success){
-        updateAfterIncrement();
+      computing_timer.enter_section("updateAfterIncrement");
+      updateAfterIncrement();
+      computing_timer.exit_section("updateAfterIncrement");
 
         //update totalLoadFactor
         totalLoadFactor+=loadFactorSetByModel;
@@ -41,12 +43,13 @@ void ellipticBVP<dim>::solve(){
         	pcout << buffer1;
         }
 
-        computing_timer.enter_section("postprocess");
 
         if (currentIncrement%userInputs.skipOutputSteps==0)
-          if (userInputs.writeOutput) output();
-        computing_timer.exit_section("postprocess");
-        }
+          if (userInputs.writeOutput){
+      computing_timer.enter_section("postprocess");
+	output();
+              computing_timer.exit_section("postprocess");}
+}
       else{
         successiveIncs=0;
       }
@@ -66,7 +69,9 @@ void ellipticBVP<dim>::solve(){
 
     //call updateAfterIncrement, if any
     if (success){
+      computing_timer.enter_section("updateAfterIncrement");
       updateAfterIncrement();
+      computing_timer.exit_section("updateAfterIncrement");
 
       //update totalLoadFactor
       totalLoadFactor+=loadFactorSetByModel;
@@ -75,11 +80,12 @@ void ellipticBVP<dim>::solve(){
       successiveIncs++;
       currentT+=delT;
       //output results to file
-      computing_timer.enter_section("postprocess");
 
       if (currentIncrement%userInputs.skipOutputSteps==0)
-        if (userInputs.writeOutput) output();
-      computing_timer.exit_section("postprocess");
+        if (userInputs.writeOutput){
+	computing_timer.enter_section("postprocess");
+      	output();
+	computing_timer.exit_section("postprocess");}
       }
     else{
       if(userInputs.reduceTimeIncrement && delTreduced<userInputs.numberofDelTReductions)

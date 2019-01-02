@@ -84,7 +84,7 @@ set Number of boundary conditions                = 4
 # Solver parameters
 ####################################
 #delta T for every increment
-set Time increments                              = 0.01
+set Initial time increments                              = 0.01
 
 #Total simulation time
 set Total time                                   = 50

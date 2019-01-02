@@ -84,10 +84,10 @@ set Number of boundary conditions                = 4
 # Solver parameters
 ####################################
 #delta T for every increment
-set Initial time increments                      = 0.01
+set Initial time increments                      = 0.001
 
 #Flag to indicate if time increment can be reduced
-set Reduce time increment                        = true
+set Reduce time increment                        = false
 
 #Number of the times delT can be reduced before quitting simulation
 set Maximum number of time reductions            = 2
@@ -96,22 +96,22 @@ set Maximum number of time reductions            = 2
 set Time reduction factor                        = 0.1
 
 #Total simulation time
-set Total time                                   = 100
+set Total time                                   = 1
 
 # Maximum iterations for linear solver
-set Maximum linear solver iterations             = 50000
+set Maximum linear solver iterations             = 100000
 
 # Relative linear solver tolerance
-set Relative linear solver tolerance             = 1.0e-6
+set Relative linear solver tolerance             = 1.0e-15
 
 # Maximum no. of non-linear iterations
 set Maximum non linear iterations                = 4
 
 # Non-linear solver tolerance
-set Absolute nonLinear solver tolerance          = 1.0e-7
+set Absolute nonLinear solver tolerance          = 1.0e-5
 
 # Relative non-linear solver toleranc
-set Relative nonLinear solver tolerance          = 1.0e-7
+set Relative nonLinear solver tolerance          = 1.0e-3
 
 ####################################
 # Elasticity parameters

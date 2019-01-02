@@ -21,6 +21,7 @@ ellipticBVP<dim>::ellipticBVP (userInputParameters _userInputs):
   dofHandler_Scalar (triangulation),
   delT(_userInputs.delT),
   totalT(_userInputs.totalTime),
+  currentT(0),
   currentIteration(0),
   currentIncrement(0),
   resetIncrement(false),
