@@ -183,6 +183,16 @@ private:
     FullMatrix<double> local_strain;
 
     /**
+    * volume weighted True strain per core
+    */
+    Vector<double> local_Truestrain;
+
+   /**
+    * volume averaged global True strain
+    */
+    Vector<double> global_Truestrain;
+
+   /**
      * volume averaged global Cauchy stress
      */
     FullMatrix<double> global_stress;

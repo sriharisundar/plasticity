@@ -45,25 +45,31 @@ void crystalPlasticity<dim>::updateAfterIncrement()
 					//Update strain, stress, and tangent for current time step/quadrature point
 				calculatePlasticity(cellID, q);
 
+				FullMatrix<double> temp,temp3,temp4, C_tau(dim, dim), E_tau(dim, dim), b_tau(dim, dim);
+				Vector<double> temp2;
 				temp.reinit(dim, dim); temp = 0.0;
-				temp2.reinit(dim, dim); temp2 = 0.0;
+				temp2.reinit(dim); temp2 = 0.0;
 				temp3.reinit(dim, dim); temp3 = 0.0;
-				CE_tau = 0.0;
+				temp4.reinit(dim, dim); temp4 = 0.0;
+				C_tau = 0.0;
 				temp = F;
-				F.Tmmult(CE_tau, temp);
-				E_tau = CE_tau;
+				F.Tmmult(C_tau, temp);
+				F.mTmult(b_tau, temp);
+				//E_tau = CE_tau;
 				temp = IdentityMatrix(dim);
 				for (unsigned int i = 0;i<dim;i++) {
+					temp2[i] = 0.5*log(b_tau[i][i])*fe_values.JxW(q);
 					for (unsigned int j = 0;j<dim;j++) {
-						E_tau[i][j] = 0.5*(E_tau[i][j] - temp[i][j]);
-						temp2[i][j] = E_tau[i][j]*fe_values.JxW(q);
-	//		Small strain definition of strain//			temp2[i][j] = (0.5*(F[i][j] + F[j][i]) - temp[i][j])*fe_values.JxW(q);
-	//		Cauchy stress definition//			temp3[i][j] = T[i][j] * fe_values.JxW(q);
-						temp3[i][j] = P[i][j] * fe_values.JxW(q);
+						E_tau[i][j] = 0.5*(C_tau[i][j] - temp[i][j]);
+						//temp2[i][j] = (0.5*(F[i][j] + F[j][i]) - temp[i][j])*fe_values.JxW(q);
+						//temp2[i][j] = 0.5*log(C_tau[i][j])*fe_values.JxW(q);
+						temp3[i][j] = T[i][j] * fe_values.JxW(q);
+						temp4[i][j] = E_tau[i][j]*fe_values.JxW(q);
 					}
 				}
 
-				local_strain.add(1.0, temp2);
+				local_Truestrain.add(1.0, temp2);
+				local_strain.add(1.0, temp4);
 				local_stress.add(1.0, temp3);
 				local_microvol = local_microvol + fe_values.JxW(q);
 
@@ -97,7 +103,8 @@ void crystalPlasticity<dim>::updateAfterIncrement()
 				this->postprocessValues(cellID, q, 1, 0) = eqvstrain;
 				if (this->userInputs.enableTwinning)
 					this->postprocessValues(cellID, q, 2, 0) = twin_ouput[cellID][q];
-			}
+				}
+			this->postprocessValuesAtCellCenters(cellID,0)=cellOrientationMap[cellID];
 
 			cellID++;
 		}
@@ -166,6 +173,7 @@ void crystalPlasticity<dim>::updateAfterIncrement()
   microvol=Utilities::MPI::sum(local_microvol,this->mpi_communicator);
 
   for(unsigned int i=0;i<dim;i++){
+		global_Truestrain[i] = Utilities::MPI::sum(local_Truestrain[i] / microvol, this->mpi_communicator);
     for(unsigned int j=0;j<dim;j++){
         global_strain[i][j]=Utilities::MPI::sum(local_strain[i][j]/microvol,this->mpi_communicator);
         global_stress[i][j]=Utilities::MPI::sum(local_stress[i][j]/microvol,this->mpi_communicator);

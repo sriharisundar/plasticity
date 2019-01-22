@@ -28,8 +28,8 @@ void crystalPlasticity<dim>::getElementalValues(FEValues<dim>& fe_values,
 	 Ulocal[i] = this->solutionWithGhosts[local_dof_indices[i]];
      }
      //local data structures
-	 FullMatrix<double> K_local(dofs_per_cell, dofs_per_cell);
-	 Vector<double> Rlocal(dofs_per_cell);
+	 FullMatrix<double> K_local(dofs_per_cell,dofs_per_cell),CE_tau(dim,dim),E_tau(dim,dim),temp,temp2,temp3;
+	 Vector<double> Rlocal (dofs_per_cell);
      K_local = 0.0; Rlocal = 0.0;
 
 
@@ -75,7 +75,7 @@ void crystalPlasticity<dim>::getElementalValues(FEValues<dim>& fe_values,
 			     }
 				 }
      }
-		 this->postprocessValuesAtCellCenters(cellID,0)=cellOrientationMap[cellID];
+
      elementalJacobian = K_local;
      elementalResidual = Rlocal;
 
