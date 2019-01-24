@@ -1,5 +1,0 @@
-# Header lines = 2
-# FaceID DoF FinalDisplacement
--0.5 0 0
-0 -0.5 0
-0 0 1

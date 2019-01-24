@@ -48,7 +48,7 @@ public:
   unsigned int BCheaderLines; // No. of header Lines in BC file
   unsigned int NumberofBCs; // No. of boundary conditions
   bool useVelocityGrad; // Specify whether to use velocity gradient for BC
-  double LmultFactor; // Specify whether to use velocity gradient for BC
+  std::vector<std::vector<double>> targetVelGrad; // 	Velocity gradient required for L based boundary conditions
 
   bool enableCyclicLoading;
   unsigned int cyclicLoadingFace;

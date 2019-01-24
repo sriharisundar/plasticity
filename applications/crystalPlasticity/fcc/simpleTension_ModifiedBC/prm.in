@@ -71,18 +71,14 @@ set Output Twin fractions                        = false
 ####################################
 # Boundary condition information
 ####################################
-#File name containing BC information
-set Boundary condition filename                  = BCinfo.txt
-
-#BC file number of header lines
-set BC file number of header lines               = 2
-
-#Number of boundary conditions
-set Number of boundary conditions                = 4
 
 set Use velocity gradient BC                     = true
 
-set Velgrad multiplication factor                = 0.01
+set Velocity gradient row 1                      = -0.005, 0, 0
+
+set Velocity gradient row 2                      = 0, -0.005, 0
+
+set Velocity gradient row 3                      = 0, 0, 0.01
 
 ####################################
 # Solver parameters
@@ -92,12 +88,6 @@ set Initial time increments                      = 0.01
 
 #Flag to indicate if time increment can be reduced
 set Reduce time increment                        = false
-
-#Number of the times delT can be reduced before quitting simulation
-set Maximum number of time reductions            = 2
-
-#Amount of reduction in the time increment
-set Time reduction factor                        = 0.3
 
 #Total simulation time
 set Total time                                   = 3

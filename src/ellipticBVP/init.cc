@@ -6,7 +6,7 @@ template <int dim>
 void ellipticBVP<dim>::init(){
   std::string line;
   double totalU;
-  unsigned int i,faceID,dof;
+  unsigned int i,j,faceID,dof;
 
   for(i=0;i<2*dim;i++){
     faceDOFConstrained.push_back({false,false,false});
@@ -66,18 +66,18 @@ void ellipticBVP<dim>::init(){
   jacobian.reinit (locally_owned_dofs, locally_owned_dofs, dsp, mpi_communicator);
 
   // Read boundary conditions
-  std::ifstream BCfile(this->userInputs.BCfilename);
-  //read data
+  if(!userInputs.useVelocityGrad){
+    std::ifstream BCfile(userInputs.BCfilename);
 
-  if (BCfile.is_open()){
-    pcout << "Reading boundary conditions\n";
+    //read data
+    if (BCfile.is_open()){
+      pcout << "Reading boundary conditions\n";
 
-    //skip header lines
-    for (i=0; i<userInputs.BCheaderLines; i++) {
-      std::getline (BCfile,line);
-    }
+      //skip header lines
+      for (i=0; i<userInputs.BCheaderLines; i++) {
+        std::getline (BCfile,line);
+      }
 
-    if(!userInputs.useVelocityGrad)
       for (i=0; i<userInputs.NumberofBCs; i++){
       	std::getline (BCfile,line);
       	std::stringstream ss(line);
@@ -87,20 +87,20 @@ void ellipticBVP<dim>::init(){
         deluConstraint[faceID-1][dof-1]=totalU/remainIncrements;
       }
 
-    if(userInputs.enableCyclicLoading){
-        deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]=deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]*remainIncrements*userInputs.delT/userInputs.quarterCycleTime;
-      }
-
-    if(userInputs.useVelocityGrad){
-      for (i=0; i<3; i++){
-      	std::getline (BCfile,line);
-      	std::stringstream ss(line);
-        ss>>targetVelGrad[i][0]>>targetVelGrad[i][1]>>targetVelGrad[i][2];
+      if(userInputs.enableCyclicLoading){
+          deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]=deluConstraint[userInputs.cyclicLoadingFace-1][userInputs.cyclicLoadingDOF-1]*remainIncrements*userInputs.delT/userInputs.quarterCycleTime;
       }
     }
   }
-  targetVelGrad*=userInputs.LmultFactor;
+  else{
+    targetVelGrad.reinit(3,3); targetVelGrad=0.0;
 
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            targetVelGrad[i][j] = userInputs.targetVelGrad[i][j];
+        }
+    }
+  }
   Fprev=IdentityMatrix(dim);
   //apply initial conditions
   applyInitialConditions();

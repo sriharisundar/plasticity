@@ -61,8 +61,12 @@ pcout (std::cout, dealii::Utilities::MPI::this_mpi_process(MPI_COMM_WORLD)==0)
   BCfilename=parameter_handler.get("Boundary condition filename");
   BCheaderLines=parameter_handler.get_integer("BC file number of header lines");
   NumberofBCs=parameter_handler.get_integer("Number of boundary conditions");
+
   useVelocityGrad=parameter_handler.get_bool("Use velocity gradient BC");
-  LmultFactor=parameter_handler.get_double("Velgrad multiplication factor");
+
+  targetVelGrad.push_back(dealii::Utilities::string_to_double(dealii::Utilities::split_string_list(parameter_handler.get("Velocity gradient row 1"))));
+  targetVelGrad.push_back(dealii::Utilities::string_to_double(dealii::Utilities::split_string_list(parameter_handler.get("Velocity gradient row 2"))));
+  targetVelGrad.push_back(dealii::Utilities::string_to_double(dealii::Utilities::split_string_list(parameter_handler.get("Velocity gradient row 3"))));
 
   enableCyclicLoading=parameter_handler.get_bool("Enable cyclic loading");
   cyclicLoadingFace=parameter_handler.get_integer("Cyclic loading face");
@@ -87,7 +91,6 @@ pcout (std::cout, dealii::Utilities::MPI::this_mpi_process(MPI_COMM_WORLD)==0)
 
   crystalStructure = parameter_handler.get("Crystal Structure");
 
-  //elasticStiffness.reinit(6,6);
   elasticStiffness.push_back(dealii::Utilities::string_to_double(dealii::Utilities::split_string_list(parameter_handler.get("Elastic Stiffness row 1"))));
   elasticStiffness.push_back(dealii::Utilities::string_to_double(dealii::Utilities::split_string_list(parameter_handler.get("Elastic Stiffness row 2"))));
   elasticStiffness.push_back(dealii::Utilities::string_to_double(dealii::Utilities::split_string_list(parameter_handler.get("Elastic Stiffness row 3"))));
@@ -176,8 +179,11 @@ void userInputParameters::declare_parameters(dealii::ParameterHandler & paramete
   parameter_handler.declare_entry("Boundary condition filename","boundaryConditions.txt",dealii::Patterns::Anything(),"File name containing BC information");
   parameter_handler.declare_entry("BC file number of header lines","1",dealii::Patterns::Integer(),"BC file number of header lines");
   parameter_handler.declare_entry("Number of boundary conditions","1",dealii::Patterns::Integer(),"Number of boundary conditions");
+
   parameter_handler.declare_entry("Use velocity gradient BC","false",dealii::Patterns::Bool(),"Flag to indicate whether to use velgrad");
-  parameter_handler.declare_entry("Velgrad multiplication factor","0.01",dealii::Patterns::Double(),"Velocity gradient multiplication factor to get actual increments");
+  parameter_handler.declare_entry("Velocity gradient row 1","",dealii::Patterns::List(dealii::Patterns::Double()),"Velocity gradient Matrix including the multiplication factor ");
+  parameter_handler.declare_entry("Velocity gradient row 2","",dealii::Patterns::List(dealii::Patterns::Double()),"Velocity gradient Matrix including the multiplication factor ");
+  parameter_handler.declare_entry("Velocity gradient row 3","",dealii::Patterns::List(dealii::Patterns::Double()),"Velocity gradient Matrix including the multiplication factor ");
 
   parameter_handler.declare_entry("Enable cyclic loading","false",dealii::Patterns::Bool(),"Flag to indicate if cyclic loading is enabled");
   parameter_handler.declare_entry("Cyclic loading face","1",dealii::Patterns::Integer(),"Face that is cyclically loaded");
