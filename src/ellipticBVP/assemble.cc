@@ -37,6 +37,20 @@ void ellipticBVP<dim>::assemble(){
 	fe_values.reinit (cell);
 	cell->get_dof_indices (local_dof_indices);
 
+  Vector<double> Ulocal(dofs_per_cell);
+
+  typename DoFHandler<dim>::active_cell_iterator cell(& this->triangulation,
+            fe_values.get_cell()->level(),
+            fe_values.get_cell()->index(),
+            & this->dofHandler);
+  cell->set_user_index(fe_values.get_cell()->user_index());
+  cell->get_dof_indices (local_dof_indices);
+  for(unsigned int i=0; i<dofs_per_cell; i++){
+Ulocal[i] = this->solutionWithGhosts[local_dof_indices[i]];
+  }
+
+  testElem.output(Ulocal);
+
 #if enableUserModel == 1
 	//fill component indices
 	std::vector<unsigned int> componentIndices(dofs_per_cell);

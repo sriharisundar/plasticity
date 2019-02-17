@@ -33,6 +33,7 @@ INCLUDE_DIRECTORIES(include)
 
 FILE(GLOB userInputParameters src/userInputParameters/*.cc)
 FILE(GLOB EBVPfunctions src/ellipticBVP/*.cc)
+FILE(GLOB CEfunctions src/crystalElement/*.cc)
 FILE(GLOB CP_masterclass src/materialModels/crystalPlasticity/*.cc)
 FILE(GLOB crystalOrientationsIO src/utilityObjects/*.cc)
 
@@ -48,7 +49,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
         #set(CMAKE_CXX_FLAGS "-Wno-maybe-uninitialized -Wno-deprecated-declarations -Wno-comment -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable")
 endif()
 
-ADD_LIBRARY(${PROJECT_NAME} ${userInputParameters} ${EBVPfunctions} ${CP_masterclass} ${crystalOrientationsIO})
+ADD_LIBRARY(${PROJECT_NAME} ${userInputParameters} ${EBVPfunctions} ${CEfunctions} ${CP_masterclass} ${crystalOrientationsIO})
 DEAL_II_SETUP_TARGET(${PROJECT_NAME})
 
 PROJECT(prisms_cp_debug)
@@ -63,5 +64,5 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
         #set(CMAKE_CXX_FLAGS "-Wno-maybe-uninitialized -Wno-deprecated-declarations -Wno-comment -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable")
 endif()
 
-ADD_LIBRARY(${PROJECT_NAME} ${userInputParameters} ${EBVPfunctions} ${CP_masterclass} ${crystalOrientationsIO})
+ADD_LIBRARY(${PROJECT_NAME} ${userInputParameters} ${EBVPfunctions} ${CEfunctions} ${CP_masterclass} ${crystalOrientationsIO})
 DEAL_II_SETUP_TARGET(${PROJECT_NAME})

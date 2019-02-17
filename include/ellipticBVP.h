@@ -5,6 +5,7 @@
 //dealii headers
 #include "dealIIheaders.h"
 #include "userInputParameters.h"
+#include "crystalElement.h"
 
 using namespace dealii;
 
@@ -150,6 +151,9 @@ class ellipticBVP : public Subscriptor
   Table<3, double> quadHistory;
   virtual void initQuadHistory();
 #endif
+
+private:
+  crystalElement<dim> testElem;
 };
 
 #endif
