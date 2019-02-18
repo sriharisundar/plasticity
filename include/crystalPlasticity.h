@@ -6,9 +6,6 @@
 #include "ellipticBVP.h"
 #include "crystalOrientationsIO.h"
 
-typedef struct {
-     FullMatrix<double> m_alpha,n_alpha, eulerAngles2;
-} materialProperties;
 //material model class for crystal plasticity
 //derives from ellipticBVP base abstract class
 template <int dim>
